@@ -1,0 +1,24 @@
+body {
+	margin: 40px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+}
+
+#image1 {
+	float: left;
+}
+
+#image2 {
+	float: right;
+}
+
+.portfolio-gallery {
+	background-color: pink;
+	padding: 20px;
+	list-style: none;
+}
+
+.portfolio-image {
+	float: left;
+}
