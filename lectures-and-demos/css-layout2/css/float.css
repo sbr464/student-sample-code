@@ -1,0 +1,32 @@
+/* float */
+.clearfix {
+	overflow: hidden;
+}
+
+#image2 {
+	float: right;
+}
+
+.inline-media-left {
+	float: left;
+	margin-right: 10px;
+}
+
+.inline-media-right {
+	float: right;
+	margin-left: 10px;
+}
+
+.portfolio-gallery {
+	list-style: none;
+	border: solid 5px gray;
+	padding: 10px;
+}
+
+.portfolio-gallery > li {
+	float: left;
+}
+
+#next-para {
+	clear: both;
+}
