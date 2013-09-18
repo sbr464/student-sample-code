@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script>
+	// window.onload = function(){
+	// 	var circle = document.getElementById('circle');
+	// 	console.log(circle)
+	// }
+
+
+	$(document).ready(function(){
+
+		var circle = $('#circle') //document.getElementById('circle');
+		var x=0, y=0, z=0, deg=0;
+		setInterval(function(){
+			x = Math.floor(Math.random() * 200)
+			y = Math.floor(Math.random() * 200)
+			z = Math.floor(Math.random() * 200)
+			deg = Math.floor(Math.random() * 720)
+			circle.css('-webkit-transform','translate3d('+x+'px, '+y+'px,'+z+'px) rotateY('+deg+'deg)')
+		}, 500)
+		
+	});
+
+</script>
+<style>
+	.circle{
+		width:200px;
+		height:200px;
+		border-radius:200px;
+		background:rgba(28,125,229,1);
+		margin:0 auto;
+		-webkit-transition:all 0.2s ease-in-out;
+	}
+	.crazy {
+		-webkit-transform: translate3d(200px,200px,200px);
+		width:500px;
+		height:500px;
+		color:red;
+	}
+</style>
+</head>
+<body>
+	<div id="circle" class="circle" ></div>
+</body>
+</html>
