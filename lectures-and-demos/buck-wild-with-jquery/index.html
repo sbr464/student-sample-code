@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+	.circle{
+		width:200px;
+		height:200px;
+		border-radius:200px;
+		background:rgba(28,125,229,1);
+		margin:0 auto;
+		-webkit-transition:all 0.2s ease-in-out;
+	}
+	.crazy {
+		-webkit-transform: translate3d(200px,200px,200px);
+		width:500px;
+		height:500px;
+		color:red;
+	}
+</style>
+</head>
+<body>
+	<div id="circle" class="circle" ></div>
+
+
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script>
 	// window.onload = function(){
@@ -24,24 +45,6 @@
 	});
 
 </script>
-<style>
-	.circle{
-		width:200px;
-		height:200px;
-		border-radius:200px;
-		background:rgba(28,125,229,1);
-		margin:0 auto;
-		-webkit-transition:all 0.2s ease-in-out;
-	}
-	.crazy {
-		-webkit-transform: translate3d(200px,200px,200px);
-		width:500px;
-		height:500px;
-		color:red;
-	}
-</style>
-</head>
-<body>
-	<div id="circle" class="circle" ></div>
+	
 </body>
 </html>
