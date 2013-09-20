@@ -1,0 +1,22 @@
+body {
+	margin: 50px;
+}
+
+.button {
+	padding: 15px 30px;
+	background-color: skyblue;
+	font-size: 60px;
+	margin: 20px;
+	font-family: "Helvetica Nueu";
+	font-weight: 200;
+	-webkit-transition: all .4s;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+.active {
+	background-color: #fedd20;
+}
