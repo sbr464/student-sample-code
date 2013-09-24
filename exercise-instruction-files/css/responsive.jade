@@ -1,0 +1,61 @@
+extend ../../includes/layout
+
+block content
+	.container
+
+		h2 CSS4: Responsive Web Design
+
+		if typeof(due) != 'undefined'
+			h3 Due
+			p= due
+
+		h3 Skills
+		ul
+			li Media Queries
+			li Responsive Design Principles
+
+		h3 Resources
+		ul
+			li: a(href='http://alistapart.com/article/responsive-web-design', target='_blank') A List Apart: Responsive Web Design
+			li: a(href='http://learn.shayhowe.com/advanced-html-css/responsive-web-design', target='_blank') Shay Howe: Responsive Web Design
+			li 
+				| Need some inspiration? 
+				a(href='http://foodsense.is', target='_blank') foodsense.is
+
+		h3 Background
+		p.
+			The time is now to treat mobile devices as first-class citizens. Mobile 
+			devices have eclipsed desktop web usage. Responsive Design is the set of
+			principles and techniques that allow you to serve a single codebase that
+			adapts to different devices. Media Queries, a new feature in CSS3, is the
+			primary enabler. Instead of building two completely different codebases,
+			one for mobile and one for desktop, we design a single site with a few
+			rules defined for how elements should adapt within different devices.
+
+		p.
+			Read the articles provided above to gain an understanding of the principles
+			of Responsive Web Design then follow the instructions below to put them
+			into practice.
+
+		h3 Requirements
+		ol
+			li Create a static HTML page based on the contents of 
+				a(href='http://en.wikipedia.org/wiki/Responsive_web_design', target='_blank') this Wikipedia page
+				| .
+			li Include the main content in a container that takes up at most 850px.
+			li Add some padding to the container on devices smaller than 850px.
+			li A sidebar that takes up 30% width but becomes no smaller than 320px.
+			li Add a navigation bar that restructures itself into a more mobile-friendly
+				| design on smaller devices.
+			li Add a couple fluid-width images, i.e. they adapt to the size of the
+				| page.
+			li Add an Image Gallery of Responsive Design examples that degrades 
+				| into a vertical stack on smaller devices.
+
+		h3 Questions for Understanding
+		ul
+			li What browsers support Media Queries?
+			li What is a breakpoint?
+			li What performance considerations are relevant to Responsive Web Design?
+
+		include ../../includes/exercise-comments.jade

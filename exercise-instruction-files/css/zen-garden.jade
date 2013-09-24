@@ -1,0 +1,25 @@
+extend ../../includes/layout
+
+block content
+  .container
+
+    h2 CSS3: Zen Garden
+
+    if typeof(due) != 'undefined'
+      h3 Due
+      p= due
+
+    h3 Skills
+    ul
+      li Semantic Markup
+      li Basic CSS
+
+    h3 Requirements
+    p
+      | Create a 
+      a(href='http://www.csszengarden.com/', target='_blank')
+        | Zen Garden
+      |  theme.
+
+    .page-comments
+      include ../../includes/disqus.html

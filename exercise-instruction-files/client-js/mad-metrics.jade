@@ -1,0 +1,57 @@
+extend ../../includes/layout
+
+block content
+	.container
+
+		h2 CLIENT4: Mad Metrics
+
+		if typeof(due) != 'undefined'
+			h3 Due
+			p= due
+
+		h3 Resources
+		ul
+			li: a(href='http://jquery.com') jQuery Documentation
+
+		h3 Skills
+		ul
+			li event handling
+			li element offset
+			li math/data manipulation
+			li timers
+
+		h3 Background
+		p As the founder of a new startup, you are obsessed with metrics and want to measure every time 
+			| your user blinks and correlate it with your conversion rate. Since the product owner thinks
+			| that prompting the user to access their web cam for this purpose might not be the best idea 
+			| you are stuck just gathering metrics of their browsing experience through simple activity on 
+			| the page such as scrolls and clicks. You are to write a script that you can 
+			| add to any web page which provides advanced metrics on the user's behavior.
+
+		h3 Requirements
+		p Write a script that reports on several different aspects of the user's browsing behavior. You 
+			| should be able to add this script to any web page. Since the metrics depend on scrolling, 
+			| create a long, one-page landing page prototype to test this on.
+
+		p Add a button with <code>position: fixed</code> that the user can click to view the metrics 
+			| collected so far. Metrics collection should be paused when this happens, and resumed 
+			| afterwards. You can display the results in a manner of your choice (<code>alert</code>, 
+			| lightbox, etc).
+
+		h4 Information Collected
+		ul
+			li What percentage of the page was viewed
+			li Total Distance Scrolled
+			li Time before clicking Sign Up
+			li Time spent on page
+			li Time spent on each section of the page
+
+		h4 Bonus I: Visual Report
+		p Display the results of the metrics collection in a compelling visual format (graphs! and charts!)
+
+		h4 Bonus II: Heatmap
+		p Dispay a heatmap that represents how much time the user spent looking at different parts of the site.
+
+
+		.page-comments
+			include ../../includes/disqus.html

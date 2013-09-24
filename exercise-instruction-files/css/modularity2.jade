@@ -1,0 +1,37 @@
+extend ../../includes/layout
+
+block content
+  .container
+
+    h2 CSS3b: CSS Modularity - Part II
+
+    if typeof(due) != 'undefined'
+      h3 Due
+      p= due
+
+    h3 Requirements
+    p Write the CSS necessary to render the following components, following the instructions in 
+      a(href='modularity1') Part I
+      | . Use the given 
+      a(href='https://github.com/RefactorU/refactoru-exercise-starters/tree/master/css/modularity2') starter code
+      | . 
+      .alert.alert-warning 
+        strong Important:
+        |  Do not modify the HTML other than to add ids and classes.
+
+    ol(start=6)
+      li horizontally spaced
+      li vertically spaced
+      li horizontal list
+      li buttons
+      li navigation
+      li pagination
+      li comment stream
+      li tabs
+
+    p Style the given HTML to match the following screenshot. It doesn't need to be pixel perfect 
+      | (just eyeball it) but it should be <i>close</i>, with color, font, layout, and spacing properly accounted for.
+      img(src='/public/img/css-modularity-prototype-part2.png')
+
+    .page-comments
+      include ../../includes/disqus.html

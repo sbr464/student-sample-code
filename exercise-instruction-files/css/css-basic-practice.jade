@@ -1,0 +1,32 @@
+extend ../../includes/layout
+
+block content
+	.container
+
+		h2 CSS1: Basic Practice
+
+		if typeof(due) != 'undefined'
+			h3 Due
+			p= due
+
+
+		h3 Resources
+		ul
+			li: a(href='http://www.culturedcode.com/css/reference.html', target="_blank") CSS 2.1 Reference
+
+		h3 Requirements
+		p Add styles to the web page you build in the 
+			a(href='/exercises/html/basic-practice') HTML1: Basic Practice 
+			| exercise. Use all of the following properties at least once.
+		ul
+			li color, font-family, font-size, font-style, font-weight, text-decoration, text-transform
+			li white-space, text-align, text-indent, line-height, letter-spacing, vertical-align
+			li margin, padding, border, border-width, border-style, border-color, width, min-width, max-width, height, min-height, max-height, overflow
+			li display, position, top, right, bottom, left, float, clear, z-index, visibility
+			li background, background-attachment, background-color, background-image, background-position, background-repeat
+			li list-style, list-style-type, list-style-position, list-style-image
+			li border-collapse, border-spacing
+			
+		.page-comments
+			include ../../includes/disqus.html
+		

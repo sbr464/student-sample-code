@@ -1,0 +1,48 @@
+extend ../../includes/layout
+
+block content
+	.container
+
+		h2 Micro Record Company
+
+		if typeof(due) != 'undefined'
+			h3 Due
+			p= due
+
+		h3 Skills
+		ul
+			li HTML Basics
+			li Microdata
+
+		h3 Resources
+		ul
+			li: a(href='http://schema.org', target='_blank') schema.org
+			li: a(href='http://diveintohtml5.info/extensibility.html', target='_blank') Dive Into HTML5: Extensibility (Microdata)
+			li: a(href='http://www.google.com/support/webmasters/bin/answer.py?hl=en&answer=99170', target='_blank') About rich snippets and structured data
+			li: a(href='http://www.google.com/webmasters/tools/richsnippets', target='_blank') Google Rich Snippets Testing Tool
+
+		h3 Background
+		p Jimmy, 10, and his cousin Tim, 8, are starting a record company including music performed on the playground by their classmates.
+
+		h3 Requirements
+		ol
+			li Create the following pages for Jimmy and Tim's record company: 
+			ul
+				li home
+				li about
+				li albums
+				li contact us
+
+			li Use the following 
+				a(href='http://schema.org/docs/schemas.html', target='_blank') microdata schemes
+				| :
+				ul
+					li Person
+					li LocalBusiness
+					li Place
+					li MusicEvent
+					li MusicGroup
+					li MusicAlbum
+		
+		.page-comments
+			include ../../includes/disqus.html

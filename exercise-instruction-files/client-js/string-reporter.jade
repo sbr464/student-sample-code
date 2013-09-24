@@ -1,0 +1,58 @@
+extend ../../includes/layout
+
+block content
+	.container
+
+		h2 CLIENT2: String Reporter
+
+		if typeof(due) != 'undefined'
+			h3 Due
+			p= due
+
+		h3 Requirements
+		ol
+			li
+				p
+					| Create an html file and js file and add a script tag to include the js file as before.
+			li
+				p Prompt the user to enter any word.
+			li
+				p Report back information in a single alert dialog about the word they entered. Use variables
+					| and string concatenation (+) to combine string values to be alerted. charAt, toLowerCase, 
+					| toUpperCase, and substring are string functions. Look for some examples online and test things
+					| out in the console to see if you can figure out the syntax for using these functions.
+				ul
+					li
+						p The word they entered, verbatim
+					li
+						p How many characters are in it (length property)
+					li
+						p What the third character is (charAt)
+					li
+						p The word in lowercase (toLowerCase)
+					li
+						p The word in uppercase (toUpperCase)
+					li
+						p The word in a sentence
+					li
+						p The subword from the 2nd to the 4th character, inclusive (substring)
+				li
+					p
+						| The alert’s output might look like this:
+						br
+						| You entered: Mango
+						br
+						| There are 5 characters in the word.
+						br
+						| The third character is ‘n’
+						br
+						| Lowercase: mango
+						br
+						| Uppercase: MANGO
+						br
+						| Example: I have wanted a Mango since I was a little boy.
+						br
+						| Subword: ang
+
+		.page-comments
+			include ../../includes/disqus.html
