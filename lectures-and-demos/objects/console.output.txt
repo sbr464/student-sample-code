@@ -1,0 +1,374 @@
+var o = { name: "Raine" };
+undefined
+["a", "b", "c"]
+["a", "b", "c"]
+{ "a": 1, "b": 2, "c": 4 }
+SyntaxError: Unexpected token :
+{ a: 1, b: 2, c: 4 }
+SyntaxError: Unexpected token :
+{ "a": 1 }
+SyntaxError: Unexpected token :
+{ a: 1 }
+1
+{ a: 1 }
+1
+{ a: 1, b: 2 }
+SyntaxError: Unexpected token :
+{ a:1, b: 2 }
+SyntaxError: Unexpected token :
+{ a: 1, b: 2 }
+SyntaxError: Unexpected token :
+var a = { a: 1, b: 2 }
+undefined
+a
+Object {a: 1, b: 2}
+var myObject = { "a": 1, "b": 2, "c": 4 };
+undefined
+myObject
+Object {a: 1, b: 2, c: 4}
+myObject.a
+1
+myObject.b
+2
+myObject.a = 10;
+10
+myObject
+Object {a: 10, b: 2, c: 4}
+myObject.b = "hello";
+"hello"
+myObject
+Object {a: 10, b: "hello", c: 4}
+for(var name in myObject) {
+  console.log(name);
+}
+a
+b
+c
+undefined
+for(var name in myObject) {
+  console.log(myObject.name);
+}
+3
+undefined
+undefined
+for(var name in myObject) {
+  console.log(myObject.a);
+}
+3
+10
+undefined
+myObject.a
+10
+myObject["a"]
+10
+var p = "a";
+undefined
+myObject[p]
+10
+for(var name in myObject) {
+  console.log(myObject[name]);
+}
+10
+hello
+4
+undefined
+for(var name in myObject) {
+  console.log(name);
+}
+a
+b
+c
+undefined
+for(var name in myObject) {
+  console.log(name + "!");
+}
+a!
+b!
+c!
+undefined
+for(var name in myObject) {
+  console.log(myObject[name]);
+}
+10
+hello
+4
+undefined
+for(var name in myObject) {
+  console.log(myObject[name].length);
+}
+undefined
+5
+undefined
+undefined
+for(var name in myObject) {
+  console.log(myObject[name]["length"]);
+}
+undefined
+5
+undefined
+undefined
+delete myObject.c
+true
+myObject
+Object {a: 10, b: "hello"}
+myObject.age
+undefined
+myObject.c
+undefined
+myObject.b
+"hello"
+if(myObject.test === "undefined") {
+  myObject.test = 100;
+}
+undefined
+myObject
+Object {a: 10, b: "hello"}
+myObject.test
+undefined
+if(myObject.test === undefined) {
+  myObject.test = 100;
+}
+100
+myObject
+Object {a: 10, b: "hello", test: 100}
+if(myObject.test === undefined) {
+  myObject.test = 150;
+}
+undefined
+myObject
+Object {a: 10, b: "hello", test: 100}
+var counter = 0;
+undefined
+for(var name in myObject) {
+  counter++;
+}
+2
+counter
+3
+var person = { name: "Raine", age: 28, state: "CO" };
+undefined
+person.name
+"Raine"
+person.age
+28
+var person2 = { name: "Matt", age: 26, state: "CO" };
+undefined
+var instructors = [person, person2];
+undefined
+instructors
+[
+Object
+age: 28
+name: "Raine"
+state: "CO"
+__proto__: Object
+, 
+Object
+age: 26
+name: "Matt"
+state: "CO"
+__proto__: Object
+]
+instructors[0]
+Object {name: "Raine", age: 28, state: "CO"}
+instructors[1]
+Object {name: "Matt", age: 26, state: "CO"}
+for(var i=0; i<instructors.length; i++) {
+  console.log("Hi " + instructors[i]["name"] + "!");
+}
+Hi Raine!
+Hi Matt!
+undefined
+{ "a": 10 }
+SyntaxError: Unexpected token :
+var o2 = { "a": 10 };
+undefined
+var o2 = { "a": 10 };
+undefined
+var o2 = { a: 10 };
+undefined
+var o2 = { Raine Lourie: 10 };
+SyntaxError: Unexpected identifier
+var o2 = { "Raine Lourie": 10 };
+undefined
+var o3 = { b:  {a:1}  };
+undefined
+o3
+Object {b: Object}
+b: Object
+a: 1
+__proto__: Object
+__proto__: Object
+person
+Object {name: "Raine", age: 28, state: "CO"}
+o3[17] = "test"
+"test"
+o3
+Object {17: "test", b: Object}
+var house = {};
+undefined
+person
+Object {name: "Raine", age: 28, state: "CO"}
+person.house = house
+Object {}
+house.rooms = 5;
+5
+house
+Object {rooms: 5}
+person.house
+Object {rooms: 5}
+house.owner = person
+Object {name: "Raine", age: 28, state: "CO", house: Object}
+age: 28
+house: Object
+name: "Raine"
+sayHello: function () {
+state: "CO"
+__proto__: Object
+house.owner
+Object {name: "Raine", age: 28, state: "CO", house: Object}
+house.owner.house
+Object {rooms: 5, owner: Object}
+house.owner.house.owner
+Object {name: "Raine", age: 28, state: "CO", house: Object}
+house.owner.house.owner.house
+Object {rooms: 5, owner: Object}
+house.owner
+Object {name: "Raine", age: 28, state: "CO", house: Object}
+person.house
+Object {rooms: 5, owner: Object}
+var boxWidth = 100;
+undefined
+var destination = "http://google.com";
+undefined
+var boxColor = "red"
+undefined
+var settings = {};
+undefined
+settings.boxWidth = boxWidth
+100
+settings.boxColor = boxColor
+"red"
+settings.destination = destination
+"http://google.com"
+settings
+Object {boxWidth: 100, boxColor: "red", destination: "http://google.com"}
+settings.boxColor
+"red"
+destination = 10;
+10
+settings
+Object {boxWidth: 100, boxColor: "red", destination: "http://google.com"}
+settings.boxWidth
+100
+destination
+10
+settings.destination
+"http://google.com"
+var settings2 = {
+  windowName: "hello",
+  destination: "http://refactoru.com"
+};
+undefined
+settings2
+Object {windowName: "hello", destination: "http://refactoru.com"}
+person
+Object {name: "Raine", age: 28, state: "CO", house: Object}
+person.sayHello = function() {
+  console.log('hi!');
+};
+function () {
+  console.log('hi!');
+}
+person
+Object {name: "Raine", age: 28, state: "CO", house: Object, sayHello: function}
+person.name
+"Raine"
+person.sayHello
+function () {
+  console.log('hi!');
+}
+person.sayHello();
+hi!
+undefined
+person.sayHello = function() {
+  console.log("Hi, it's " + person.name);
+};
+function () {
+  console.log("Hi, it's " + person.name);
+}
+person.sayHello
+function () {
+  console.log("Hi, it's " + person.name);
+}
+person.sayHello()
+Hi, it's Raine
+undefined
+person2
+Object {name: "Matt", age: 26, state: "CO"}
+person2.sayHello = person.sayHello;
+function () {
+  console.log("Hi, it's " + person.name);
+}
+person2.sayHello()
+Hi, it's Raine
+undefined
+person2.name
+"Matt"
+person2
+Object {name: "Matt", age: 26, state: "CO", sayHello: function}
+person
+Object {name: "Raine", age: 28, state: "CO", house: Object, sayHello: function}
+person.sayHello === person2.sayHello
+true
+person.sayHello = function() {
+  console.log("Hi, it's " + this.name);
+};
+function () {
+  console.log("Hi, it's " + this.name);
+}
+person.sayHello()
+Hi, it's Raine
+undefined
+person.sayHello
+function () {
+  console.log("Hi, it's " + this.name);
+}
+person2.sayHello
+function () {
+  console.log("Hi, it's " + person.name);
+}
+person2.sayHello = person.sayHello
+function () {
+  console.log("Hi, it's " + this.name);
+}
+person.sayHello()
+Hi, it's Raine
+undefined
+person2.sayHello()
+Hi, it's Matt
+undefined
+person.sayHello === person2.sayHello
+true
+var myArray = [];
+undefined
+myArray.name = "test";
+"test"
+myArray
+[]
+myArray.test
+undefined
+myArray.name
+"test"
+myArray[0]
+undefined
+myArray[0] = 55;
+55
+myArray[0]
+55
+myArray["name"];
+"test"
+var d = new Date()
+undefined
+d
+Mon Sep 23 2013 10:53:44 GMT-0600 (MDT)
