@@ -4,4 +4,22 @@ body {
 h1 {
   color: #b3d107;
   font-size: 5em;
+  text-align: center;
+  -webkit-text-shadow: 0px 0px 15px #000;
+  -moz-text-shadow: 0px 0px 15px #000;
+  -ms-text-shadow: 0px 0px 15px #000;
+  -o-text-shadow: 0px 0px 15px #000;
+  text-shadow: 0px 0px 15px #000;
+}
+.mydiv {
+  width: 100%;
+  border: 1px solid #000;
+}
+.mydiv p {
+  font-size: 4em;
+  border: 1px solid #000;
+}
+.mydiv p a {
+  font-weight: bold;
+  color: #999;
 }
