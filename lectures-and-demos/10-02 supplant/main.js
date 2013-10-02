@@ -14,10 +14,13 @@ if (!String.prototype.supplant) {
 
 
 // creating a string with string concatenation (ugly!)
+var myClass = 'important';
+var myClass2 = 'active';
+var message = 'hi';
 var messageEl1 = '<a class="' + myClass + ' btn ' + myClass2 + ' btn-default">' + message + '</a>';
 
 // creating a string by supplanting an array (good!)
-var messageEl2 = '<a class="{0} btn {1} btn-default">{2}</a>'.supplant([myClass, myClass2, message];
+var messageEl2 = '<a class="{0} btn {1} btn-default">{2}</a>'.supplant([myClass, myClass2, message]);
 
 // creating a string by supplanting an object (good!)
 var myObject = {
