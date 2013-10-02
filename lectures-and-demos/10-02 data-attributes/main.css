@@ -1,0 +1,18 @@
+body {
+	margin: 50px;
+}
+
+.message {
+	margin: 20px 10px;
+	/*
+	Margin shorthand (also works for padding):;
+	margin: top right bottom left;
+	margin: top bottom right/left;
+	margin: top/bottom right/left;
+	margin: top/bottom/right/left;
+	*/
+}
+
+.message:first-child {
+	margin-left: 0;
+}
