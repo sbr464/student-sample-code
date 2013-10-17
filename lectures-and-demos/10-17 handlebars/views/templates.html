@@ -1,0 +1,9 @@
+<script id="search-results-template" type="text/x-handlebars-template">
+	{{#each statuses}}
+		{{#if text}}
+			<li>{{@index}} : {{text}}</li>
+		{{else}}
+			<li>NO TEXT</li>
+		{{/if}}
+	{{/each}}
+</script>
