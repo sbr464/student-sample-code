@@ -1,0 +1,20 @@
+doctype 5
+html
+	head
+		title Express Demo
+		link(type='text/css', rel='Stylesheet', href='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css')
+		link(type='text/css', rel='Stylesheet', href='/stylesheets/style.css')
+	body
+		h1 What ails you?
+		ul.list-inline
+			li
+				a.body-button.btn.btn-large.btn-info(data-part='leg') Leg
+			li
+				a.body-button.btn.btn-large.btn-warning(data-part='stomach') Stomach
+			li
+				a.body-button.btn.btn-large.btn-danger(data-part='head') Head
+
+		h2#diagnosis
+
+		script(src='http://code.jquery.com/jquery-2.0.3.min.js')
+		script(src='/javascripts/main.js')
