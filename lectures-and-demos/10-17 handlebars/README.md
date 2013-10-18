@@ -22,5 +22,8 @@
 	* Pass the data to the compiled template
 	* Append the resulting HTML string into the DOM
 	
-code if(key in obj){
-code }
+```javascript
+	if(key in obj){
+
+	}
+```
