@@ -1,7 +1,14 @@
 <script id="search-results-template" type="text/x-handlebars-template">
+	// lets say you passed data that looked like {text : "hello"}
+	<h1>{{data}}</h1>
+	// lets say you passed data that looked like {text : {name : "hello"}}
+	<h1>{{text.name}}</h1>
+
 	{{#each statuses}}
+		//statuses[0].text
+		//statuses[1].text
 		{{#if text}}
-			<li>{{@index}} : {{text}}</li>
+			<li>{{text}}</li>
 		{{else}}
 			<li>NO TEXT</li>
 		{{/if}}

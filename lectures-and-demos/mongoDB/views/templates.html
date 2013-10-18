@@ -1,0 +1,9 @@
+<script id="cats-template" type="text/x-handlebars-template">
+	{{#if cats}}
+		{{#each cats}}
+	  		<li>{{this.name}}</li>
+		{{/each}}
+	{{else}}
+		<li>No cats</li>
+	{{/if}}
+</script>

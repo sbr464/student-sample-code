@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	h1 Kitten Party! (with MongoDB)
+	input#add-cat(placeholder="What is your cat's name?",name="catname")
+	h1 These are all the cats in our Cat collection
+	ul#cats
+		- for (var i = 0; i < kittens.length; ++i) {
+			li= kittens[i].name
+		- }
+	script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")
+	script(src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js")
+	script(src="/javascripts/main.js")
+	include templates.html
