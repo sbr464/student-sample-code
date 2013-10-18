@@ -22,7 +22,5 @@
 	* Pass the data to the compiled template
 	* Append the resulting HTML string into the DOM
 	
-code
-if(key in obj){
-	
-}
+code if(key in obj){
+code }
