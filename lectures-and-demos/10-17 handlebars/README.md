@@ -23,6 +23,6 @@
 	* Append the resulting HTML string into the DOM
 	
 code
-	if(key in obj){
-		
-	}
+if(key in obj){
+	
+}
