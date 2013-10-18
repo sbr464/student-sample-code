@@ -23,7 +23,7 @@
 	* Append the resulting HTML string into the DOM
 	
 ```javascript
-	if(key in obj){
+if(key in obj){
 
-	}
+}
 ```
