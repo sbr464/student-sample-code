@@ -1,0 +1,14 @@
+.street {
+	position: relative;
+}
+
+.car {
+	position: absolute;
+	font-size: 25px;
+	color: red;
+}
+
+.light {
+	position: absolute;
+	font-size: 25px;
+}
