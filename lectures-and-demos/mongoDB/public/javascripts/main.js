@@ -7,9 +7,8 @@ $(function(){
 			$.post('/addcat', {catname : $el.val()}, function(responseMessage){
 				$("#message").text(responseMessage);
 				// update our cats list
-				$.get('/getallcats', function(cats){
-					$catsList.html(catsTemplate({cats : cats}))
-				})
+				$catsList.html(catsTemplate({cats : responseMessage.cats}))
+
 			});
 
 			//clear the input

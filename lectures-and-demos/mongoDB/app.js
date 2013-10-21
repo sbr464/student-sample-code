@@ -32,7 +32,9 @@ if ('development' == app.get('env')) {
 mongoose.connect('mongodb://localhost/mongotest');
 
 //setup our MongoDB collection
-var Cat = mongoose.model('Cat', { name: String });
+var Cat = mongoose.model('Cat', { 
+	name: String
+});
 
 // Index route
 
@@ -58,7 +60,13 @@ app.post('/addcat', function(req, res){
 			res.send(err)
 		}
 		else{
-			res.send("YOUR CAT HAS BEEN SAVED!")
+			Cat.find({}, function(err, catsData){
+				res.send({
+					message : "YOUR CAT HAS BEEN SAVED!", 
+					cats : catsData
+				});
+			})
+			
 		}
 	});
 })
