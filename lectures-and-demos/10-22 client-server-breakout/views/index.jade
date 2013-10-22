@@ -1,0 +1,16 @@
+doctype 5
+html
+	head
+		title Hi There
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css')
+	body
+		h1 #{name}
+		h2 in beautiful #{city}
+		p #{description}
+		input#name(placeholder='name')
+		a#go.btn.btn-primary.btn-large I Want To Go!
+		//<a id="go" class="btn btn-primary btn-large">I Want To Go!</a>
+
+		script(src='http://code.jquery.com/jquery-2.0.3.min.js')
+		script(src='/javascripts/main.js')
