@@ -37,16 +37,16 @@ $ ->
 		console.log myArr[i]
 
 	foodObj = {
-		'Broccoli' : 'delicious',
-		'Porkchops' : 'declicious',
-		'Candy' : 'delicious',
+		'Broccoli' : 'delicious'
+		'Porkchops' : 'declicious'
+		'Candy' : 'delicious'
 		'Spinach' : 'gross'
 	}
 
 	foodArr = [
 		'Broccoli'
-		'Porkchops',
-		'Candy',
+		'Porkchops'
+		'Candy'
 		'Spinach'
 	]
 
@@ -54,7 +54,10 @@ $ ->
 		foodItem = foodItem or false
 		return false if not foodItem
 
-	# logFood item for item in food
+	#logFood is the function we are calling
+	# item is the name of the param you are passing
+	# foodArr is the array
+	logFood item for item in foodArr
 
 	# loop over an array
 	for item in foodArr

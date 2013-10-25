@@ -1,7 +1,23 @@
 doctype 5
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+html(ng-app="todo")
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")
+		script(src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js")
+		script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js")
+		script(src="/javascripts/lib/animals.js")
+		script(src="/javascripts/lib/todo.js")
+		// - if(ENV !== 'undefined' && ENV === 'production'){
+		// 	link(rel="stylesheet", href="/stylesheets/build.min.css")
+		// 	script(src="/javascripts/build.min.js")
+		// - } else {
+		// 	link(rel="stylesheet", href="/stylesheets/lib/style.css")
+		// 	script(src="/javascripts/lib/main.js")
+		// 	script(src="/javascripts/lib/users.js")
+		// - }
+
+
+	body
+		block content
+		

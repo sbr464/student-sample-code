@@ -35,7 +35,9 @@
   }
 
   app.get('/', function(req, res) {
-    return res.render('index');
+    return res.render('index', {
+      ENV: 'dev'
+    });
   });
 
   http.createServer(app).listen(app.get('port'), function() {
