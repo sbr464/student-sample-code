@@ -34,61 +34,32 @@ app.get('/', function(req, res){
 });
 
 var t = new twitter({
-    consumer_key: 'GQ6WWgJmkJHxcvVTEaOqWA',   
-    consumer_secret: '8r5lLBavI6TDxfa40ljTGGmr3ZLOIQ9nShKGan1u8',   
-    access_token_key: '1236775772-Cgk2CdymgQHduO7vBHjfkkqi8htOWuZEJ1qJHBE',     
-    access_token_secret: '3lP5o6xonVEBFRxi3jXW5NuFM3qohNGSIl3toSilw'     
+    consumer_key: 'YOUR CONSUMER KEY',   
+    consumer_secret: 'YOUR CONSUMER SECRET',   
+    access_token_key: 'YOUR ACCESS TOKEN KEY',     
+    access_token_secret: 'YOUR ACCESS TOKEN SECRET'     
 })
 
-var symbols = ['$msft', '$intc', '$hpq', '$goog', '$nok', '$nvda', '$bac', '$orcl', '$csco', '$aapl', '$ntap', '$emc', '$t', '$ibm', '$vz', '$xom', '$cvx', '$ge', '$ko', '$jnj'];
-var watchList = {
-    total: 0,
-    symbols: {}
-};
-
 var count = 0
-
-//Tell the twitter API to filter on the watchSymbols 
-t.stream('statuses/filter', { track: 'html'}, function(stream) {
- 
-  //We have a connection. Now watch the 'data' event for incomming tweets.
-  stream.on('data', function(tweet) {
- 	// console.log(tweet)
- 	sockets.sockets.emit('data', {
- 		count : count++,
- 		tweet : tweet.text
- 	});
-    // var claimed = false;
- 
-    // //Make sure it was a valid tweet
-    // if (tweet.text !== undefined) {
- 
-    //   var text = tweet.text.toLowerCase();
-
-    //   _.each(symbols, function(v) {
-    //       if (text.indexOf(v.toLowerCase()) !== -1) {
-    //           watchList.symbols[v]++;
-    //           claimed = true;
-    //       }
-    //   });
- 
-    //   //If something was mentioned, increment the total counter and send the update to all the clients
-    //   if (claimed) {
-    //       //Increment total
-    //       watchList.total++;
- 		
-    //       //Send to all the clients
-    //       sockets.sockets.emit('data', watchList);
-    //   }
-    // }
-  });
-});
 
 var server = http.createServer(app)
 
 //Start a Socket.IO listen
-var sockets = io.listen(server);
+var socketServer = io.listen(server);
+
+ //Tell the twitter API to filter on the watchSymbols 
+// t.stream('statuses/filter', { track: 'html'}, function(stream) {
  
+//   //We have a connection. Now watch the 'data' event for incomming tweets.
+//   stream.on('data', function(tweet) {
+//     // console.log(tweet)
+//     socketServer.sockets.emit('data', {
+//         count : count++,
+//         tweet : tweet.text
+//     });
+//   });
+// });
+
 //Set the sockets.io configuration.
 //THIS IS NECESSARY ONLY FOR HEROKU!
 // sockets.configure(function() {
@@ -97,10 +68,20 @@ var sockets = io.listen(server);
 // });
  
 //If the client just connected, give them fresh data!
-sockets.sockets.on('connection', function(socket) { 
-    socket.emit('data', watchList);
-});
+// socketServer.sockets.on('connection', function(socket) { 
+// });
+// SIMPLE DEMO
+var users = {}
 
+socketServer.sockets.on('connection', function(socket) { 
+    console.log('SOMEONE CONNECTED!')
+    users[socket.id] = socket.id
+    // socket.emit('message', 'HI!')
+
+    socket.on('message', function(message){
+        socket.broadcast.emit('message', message)
+    });
+});
 
 server.listen(3000, function(){
   console.log('Express server listening on port ' + app.get('port'));

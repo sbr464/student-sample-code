@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost');
+var socket = io.connect();
 
 var $count = $('#count');
 var $tweetsPerSec = $('#tweets-per-second')
@@ -15,3 +15,4 @@ setInterval(function(){
 	$tweetsPerSec.text(count - lastAmount);
 	lastAmount = count
 }, 1000)
+
