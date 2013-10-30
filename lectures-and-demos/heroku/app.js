@@ -27,8 +27,29 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+var mongoose = require('mongoose');
+mongoURI = global.process.env.MONGOHQ_URL || 'mongodb://localhost/test'
+mongoose.connect(mongoURI);
+
+var Cat = mongoose.model('Cat', { name: String });
+
+var kitty = new Cat({ name: 'Zildjian' });
+kitty.save(function (err) {
+  if (err)
+  console.log('meow');
+});
+
+var kitty = new Cat({ name: 'Ajax' });
+kitty.save(function (err) {
+  if (err)
+  console.log('meow');
+});
 app.get('/', routes.index);
-app.get('/users', user.list);
+app.get('/cats', function(req, res){
+	Cat.find({}, function(err, doc){
+		res.send(doc)
+	})
+});
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
