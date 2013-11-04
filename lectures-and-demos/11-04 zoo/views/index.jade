@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	h1 Welcome to the Zoo!
+	h2 Animals:
+
+	if animals.length == 0
+		p Sorry, the zoo is closed for the season.
+	else
+		ul.list-unstyled
+			for animal in animals
+				li 
+					.animal(data-id=animal.id)
+						img.parent(src='/images/' + animal.name + '.png')
+						ul.list-inline
+							for baby in animal.babies
+								img.baby(src='/images/' + baby.name + '.png')
+

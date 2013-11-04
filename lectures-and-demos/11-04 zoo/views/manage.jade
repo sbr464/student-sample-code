@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	h1 Welcome to the Zoo Management App!
+
+	// default: method='get', action=[current page]
+	form(method='post', action='/add')
+		h2 Add an Animal
+		label
+			| Name:
+			input(name='name')
+		label
+			| Dietary Type:
+			select(name='diet')
+				option(value='carnivore') Carnivore
+				option(value='herbivore') Herbivore
+				option(value='omnivore') Omnivore
+		input(type='submit')

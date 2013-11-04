@@ -1,0 +1,18 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.pen {
+	margin: 10px;
+	padding: 10px;
+	border: solid 1px black;
+}
+
+.baby {
+	width: 50px;
+}
