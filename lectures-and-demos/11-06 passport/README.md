@@ -8,35 +8,35 @@
 1. npm install --save mongoose
 1. Create a Facebook App
 
-	Docs: https://developers.facebook.com/docs/facebook-login/getting-started-web/
-	Create App: https://developers.facebook.com/apps/
+		* Docs: https://developers.facebook.com/docs/facebook-login/getting-started-web/
+		* Create App: https://developers.facebook.com/apps/
 
 1. On the Facebook App dashboard, check "Website with Facebook Login" and set the Site URL to: http://localhost:3006/auth/facebook/callback
 
 1. Require mongoose, passport, and passport-facebook:
 
-	, mongoose = require('mongoose')
-	, passport = require('passport')
-	, FacebookStrategy = require('passport-facebook').Strategy;
+		, mongoose = require('mongoose')
+		, passport = require('passport')
+		, FacebookStrategy = require('passport-facebook').Strategy;
 
 1. Initialize passport:
 
-	// IMPORTANT: must add before app.use(app.router)
-	app.use(express.cookieParser());
-	app.use(express.cookieSession({ secret: '12345' }));
-	app.use(passport.initialize());
-	app.use(passport.session());
+		// IMPORTANT: must add before app.use(app.router)
+		app.use(express.cookieParser());
+		app.use(express.cookieSession({ secret: '12345' }));
+		app.use(passport.initialize());
+		app.use(passport.session());
 
 1. Connect to mongoose database:
 
-	mongoose.connect('mongodb://localhost/refactoru-passport-test')
+		mongoose.connect('mongodb://localhost/refactoru-passport-test')
 
 1. Create a User model:
 
-	var User = mongoose.model('User', {
-		facebookid: number,
-		name: string
-	})
+		var User = mongoose.model('User', {
+			facebookid: number,
+			name: string
+		})
 
 1. Set up Passport-Facebook strategy (add your Facebook credentials from Step 6)
 
