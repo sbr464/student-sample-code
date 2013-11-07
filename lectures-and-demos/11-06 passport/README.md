@@ -8,8 +8,8 @@
 1. npm install --save mongoose
 1. Create a Facebook App
 
-	* Docs: https://developers.facebook.com/docs/facebook-login/getting-started-web/
-	* Create App: https://developers.facebook.com/apps/
+	 * Docs: https://developers.facebook.com/docs/facebook-login/getting-started-web/
+	 * Create App: https://developers.facebook.com/apps/
 
 1. On the Facebook App dashboard, check "Website with Facebook Login" and set the Site URL: 
 
