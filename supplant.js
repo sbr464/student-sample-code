@@ -1,3 +1,5 @@
+// From Douglas Crockford - Remedial Javascript
+// http://javascript.crockford.com/remedial.html
 if (!String.prototype.supplant) {
     String.prototype.supplant = function (o) {
         return this.replace(
