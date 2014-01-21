@@ -1,0 +1,9 @@
+.outer { 
+	padding: 20px;
+	background-color: aqua;
+}
+
+.inner {
+	padding: 20px;
+	background-color: wheat;
+}
