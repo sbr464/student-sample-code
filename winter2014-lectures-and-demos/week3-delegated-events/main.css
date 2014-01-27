@@ -1,0 +1,24 @@
+body {
+	font-family: Helvetica;
+	font-size: 24px;
+	margin: 50px;
+}
+
+.container {
+	background-color: #ccc;
+	padding: 50px;
+}
+
+.button {
+	border-radius: 5px;
+	padding: 6px 20px;
+	border: solid 1px gray;
+	text-decoration: none;
+	color: black;
+	background-color: wheat;
+	margin-right: 5px;
+}
+
+.button:hover {
+	background-color: orange;
+}
