@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Index 2</title>
+    <style>
+      div {
+        border: 1px solid #000;
+        background: #F00;
+      }
+      #original {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="original">
+      <p>I am the original div.</p>
+    </div>
+    <button id="cloner">Click Me to Clone</button>
+    <button id="sorter">Click Me to Sort</button>
+    <div id="clone-container"></div>
+  
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script>
+      var obArr = [
+        {a: 1, b: 5},
+        {a: 5, b: 2},
+        {a: 5, b: 5},
+        {a: 5, b: 1},
+        {a: 5, b: 200},
+        {a: 2, b: 20},
+        {a: 10, b: 1}
+      ];
+
+      // Sort the array of objects. This is descending.
+      // Change the order of -1 and 1 to change order of sort.
+      var sorted = obArr.sort(function(ob1, ob2){
+        // This method will sort only by property "a"
+        // if(ob1.a > ob2.a)
+        //   return -1;
+        // if(ob1.a < ob2.a)
+        //   return 1;
+        // return 0;
+        
+        // This will sort by property "a" and THEN by property "b"
+        if(ob1.a === ob2.a){
+          if(ob1.b > ob2.b)
+            return -1;
+          if(ob1.b < ob2.b)
+            return 1
+          return 0;
+        }
+        if(ob1.a > ob2.a)
+          return -1;
+        if(ob1.a < ob2.a)
+          return 1;
+        return 0;
+      });
+      console.log(sorted);
+
+
+      $(function(){
+        // Same as "clone.html" except for adding the data object for keeping track
+        $('#cloner').click(function(){
+          var counter = Math.floor(Math.random() * 200);
+          var cloned = $('#original').clone();
+          cloned.attr('id', 'clone-' + counter);
+          cloned.data('index', counter);
+          cloned.find('p').text('I am clone number ' + counter);
+          cloned.prependTo('#clone-container');
+        });
+
+        // Sort on index when clicked
+        $('#sorter').click(function(){
+          // Convert the clone set to a native JS array
+          var cloneArray = $('#clone-container > div').toArray();
+
+          // Sort the native array by the data('index') property
+          var sorted = cloneArray.sort(function(ob1, ob2){
+            var $ob1 = $(ob1);
+            var $ob2 = $(ob2);
+            if($ob1.data('index') > $ob2.data('index'))
+              return -1;
+            if($ob1.data('index') < $ob2.data('index'))
+              return 1;
+            return 0;
+          });
+
+          // Loop through sorted result...
+          for(var i = 0; i < sorted.length; i++){
+            // and append each item back into the list.
+            // Since there can only be one instance of each item in the page,
+            // this won't make duplicates, it will just re-order them.
+            $('#clone-container').append(sorted[i]);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

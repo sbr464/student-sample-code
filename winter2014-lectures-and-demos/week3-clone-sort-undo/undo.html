@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Index 3</title>
+    <style>
+      div {
+        border: 1px solid #000;
+        background: #F00;
+      }
+      #original {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="original" class="quote">
+      <p>I am the original div.</p>
+      <button class="delete">Delete it</button>
+    </div>
+    <button id="cloner">Click Me to Clone</button>
+    <div id="clone-container"></div>
+  
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script>
+      // Store a global variable for keeping track of the last deleted item
+      var currentDeleteBuffer;
+
+
+      $(function(){
+        $('#cloner').click(function(){
+          var counter = Math.floor(Math.random() * 200);
+          var cloned = $('#original').clone();
+          cloned.attr('id', 'clone-' + counter);
+          cloned.data('index', counter);
+          cloned.find('p').text('I am clone number ' + counter);
+          cloned.prependTo('#clone-container');
+        });
+
+        // .delete button click
+        $(document).on('click', '.delete', function(){
+          // Find the delete button's ".quote" container and save it into the variable
+          currentDeleteBuffer = $(this).closest('.quote');
+
+          // Remove the container from the set.
+          currentDeleteBuffer.remove();
+
+          // Now that the variable is stored globally, you can recall it from another function
+          // and re-append (or prepend) it to the DOM to bring it back.
+        });
+      });
+    </script>
+  </body>
+</html>
