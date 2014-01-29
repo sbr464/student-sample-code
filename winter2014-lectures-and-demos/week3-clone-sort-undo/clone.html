@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Index 1</title>
+    <style>
+      /* Some separater styles to keep things... separated... */
+      div {
+        border: 1px solid #000;
+        background: #F00;
+      }
+
+      /* Hide our original object at load */
+      #original {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- The original HTML object that we'll be using for cloning -->
+    <div id="original">
+      <h5>I am a title</h5>
+      <p>I am the original div.</p>
+    </div>
+
+    <!-- Cloning button -->
+    <button id="cloner">Click Me to Clone</button>
+
+    <!-- Container of Clones -->
+    <div id="clone-container"></div>
+  
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script>
+      $(function(){
+
+        // a running counter
+        var counter = 0;
+
+        // Click handler for the clone button
+        $('#cloner').click(function(){
+
+          // Get a duplicate of our original
+          var cloned = $('#original').clone();
+
+          // Set the id to clone-0, 1, 2...
+          cloned.attr('id', 'clone-' + counter);
+
+          // find the "p" tag inside the clone and set the text
+          cloned.find('p').text('I am clone number ' + counter);
+
+          // Prepend the new clone to the clone container
+          cloned.prependTo('#clone-container');
+
+          // Update the counter
+          counter++;
+        });
+      });
+    </script>
+  </body>
+</html>
