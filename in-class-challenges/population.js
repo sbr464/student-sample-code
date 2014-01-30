@@ -15,4 +15,4 @@ var size = function() {
 	}
 }
 
-size.call(city);
+console.log('City size:', size.call(city));
