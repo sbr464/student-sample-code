@@ -1,0 +1,64 @@
+<!-- 
+
+Because this is loading an external file via ajax,
+you need to run this in a simple http server.
+Open terminal, navigate to this folder and run:
+
+python -m SimpleHTTPServer
+
+Then navigate to: localhost:8000
+
+-->
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>AJAX Load File</title>
+		<style type="text/css" media="screen">
+			#word-cloud > div {
+				background: #F00;
+				color: #FFF;
+				padding: 5px 10px;
+				border-radius: 5px;
+				margin: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="word-cloud"></div>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script>
+		<script>
+		var originalData;
+		var freqs;
+
+		$(function(){
+			$.get('data.json', {test: 'hello'}, function(data){
+				originalData = data;
+				var wordList = [];
+				freqs = [];
+				for(var word in data.words){
+					var freq = data.words[word];
+					freqs.push(freq);
+					for(var i = 0; i < freq; i++){
+						wordList.push(word);
+					}
+				}
+				renderCloud(freqs);
+			});
+		});
+
+		function renderCloud(data){
+			d3.select("#word-cloud")
+			  .selectAll("div")
+			    .data(data)
+			    .style("width", function(d) { return d * 10 + "px"; })
+			    .text(function(d) { return d; })
+			  .enter().append("div")
+			    .style("width", function(d) { return d * 10 + "px"; })
+			    .text(function(d) { return d; });
+		}
+		</script>
+	</body>
+</html>

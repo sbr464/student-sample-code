@@ -25,20 +25,18 @@ $(function() {
 		var cityEl = $('<div class="city">').text(concert.city);
 		var dateEl = $('<div class="date">').text(concert.date.toDateString());
 
-		// without chaining:
-		// concertEl
-		// 	.append(artistEl);
-		// concertEl
-		// 	.append(cityEl);
-		// concertEl
-		// 	.append(dateEl);
+		// multiple appends:
+		// concertEl.append(artistEl);
+		// concertEl.append(cityEl);
+		// concertEl.append(dateEl);
 
-		// chaining
+		// multiple appends with chaining:
 		// concertEl
 		// 	.append(artistEl)
 		// 	.append(cityEl)
 		// 	.append(dateEl);
 
+		// append an array of DOM elements
 		concertEl.append([artistEl, cityEl, dateEl]);
 
 		return concertEl;
