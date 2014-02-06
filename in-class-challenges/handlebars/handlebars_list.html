@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Handlebars Demo</title>
+	</head>
+	<body>
+
+		<script id="books" type="text/x-handlebars-template">
+			<div class="books">
+				<ul>
+					{{#each books}}
+						<li>{{this}}</li>
+					{{/each}}
+				</ul>
+			</div>
+		</script>
+
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="handlebars_list.js"></script>
+	</body>
+</html>

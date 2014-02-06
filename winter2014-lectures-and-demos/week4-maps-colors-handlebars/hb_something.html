@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Nested Handlebars</title>
+		<style>
+			* {
+				-webkit-box-sizing: border-box;
+				   -moz-box-sizing: border-box;
+				        box-sizing: border-box;
+			}
+			html, body, #map-canvas {
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+				font-family: sans-serif;
+			}
+			#map-canvas {
+				width: 65%;
+			}
+			#sidebar {
+				position: absolute;
+				right: 0;
+				top: 0;
+				height: 100%;
+				width: 35%;
+				background: #EEE;
+				border-left: 3px solid #999;
+				padding: 10px;
+				max-height: 100%;
+				overflow: auto;
+			}
+
+			.sidebarcard {
+				border-bottom: 1px solid #CCC;
+				background: #FFF;
+				margin-bottom: 10px;
+				padding: 5px;
+			}
+
+			h3 {
+				font-size: 1em;
+			}
+
+			.first {
+				color: #F0F;
+			}
+			.last {
+				color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+
+
+		<div id="map-canvas"></div>
+		<div id="sidebar"></div>
+
+
+		<script id="infocard" type="text/x-handlebars-template">
+			<div>
+				<h3>{{name}}</h3>
+				{{#with address.geo}}
+				<p>{{lat}}, {{lng}}</p>
+				{{/with}}
+			</div>
+		</script>
+		<script id="sidebarcard" type="text/x-handlebars-template">
+			<div class='sidebarcard' data-lat='{{address.geo.lat}}' data-lng='{{address.geo.lng}}'>
+				<p>{{upper name}}</p>
+	    	{{colorize posts}}
+				<!--<ul>
+				    {{#each posts}}
+				    	
+				    	<li>
+				    		<ul>
+				    			{{#each this.words}}
+				    				{{!-- <li class="{{#if @first}}first{{/if}} {{#if @last}}last{{/if}}">
+				    					{{@index}} - {{this}}
+				    				</li> --}}
+				    				<li>{{colorize @index this}}</li>
+				    			{{/each}}
+				    		</ul>
+				    	</li>
+				    	
+				    {{/each}}
+				</ul>-->
+			</div>
+		</script>
+
+		
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/Faker/0.5.11/MinFaker.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+		<script>
+			var map;
+			var maxCount = 0, curInd = 0;
+			var lastSet = null;
+
+			Handlebars.registerHelper('upper', function(val) {
+			  return new Handlebars.SafeString(
+			    "<strong>"+ val.toUpperCase() +"</strong>"
+			  );
+			});
+			Handlebars.registerHelper('colorize2', function(ind, val){
+				maxCount = 9;
+				console.log(this);
+				if(lastSet != this){
+					curInd = 0;
+					lastSet = this;
+				}
+				var r = (curInd/maxCount) * 255,
+						g = (curInd/maxCount) * 255,
+						b = (curInd/maxCount) * 255
+				;
+				r = Math.floor(r);
+				g = Math.floor(g);
+				b = Math.floor(b);
+				g = Math.pow(r, 2) % 255;
+				curInd++;
+				return new Handlebars.SafeString(
+					'<span style="color: rgb('+r+','+g+','+b+')">' + val + '</span>'
+				);
+			});
+
+			Handlebars.registerHelper('colorize', function(posts){
+				var words = [];
+				for (var i = 0; i < posts.length; i++) {
+					for(var j = 0; j < posts[i].words.length; j++){
+						words.push(posts[i].words[j]);
+					}
+				};
+
+				var ostr = '<ul>';
+				for(var i = 0; i < words.length; i++){
+					var r = (i/words.length) * 255,
+							g = (i/words.length) * 255,
+							b = (i/words.length) * 255
+					;
+					r = Math.floor(r);
+					g = Math.floor(g);
+					b = Math.floor(b);
+					g = Math.pow(r, 2) % 255;
+					r = Math.abs(Math.sin( (b/255) * (Math.PI * 2) ) ) * 255;
+					r = Math.floor(r);
+					g = Math.abs(Math.cos( (b/255) * (Math.PI * 2) ) ) * 255;
+					g = Math.floor(g);
+					b = r;
+
+					ostr += '<li><span style="color: rgb('+r+','+g+','+b+')">' + words[i] + '</span></li>'
+				}
+				ostr += '</ul>';
+				return new Handlebars.SafeString(ostr);
+			});
+
+
+			var init = function(){
+				var mapOptions = {
+			    zoom: 8,
+			    center: new google.maps.LatLng(-34.397, 150.644)
+			  };
+
+			  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+			  //generate data...
+			  var data = [];
+			  for (var i = 0; i < 20; i++) {
+			  	var card = Faker.Helpers.createCard();
+			  	data.push(card);
+			  	console.log(card);
+			  	for (var j = 0; j < card.posts.length; j++) {
+			  		maxCount += card.posts[j].words.length;
+			  	};
+			  	
+			  };
+
+			  var infoSource = $('#infocard').html();
+			  var infoTemplate = Handlebars.compile(infoSource);
+
+			  var sidebarSource = $('#sidebarcard').html();
+			  var sidebarTemplate = Handlebars.compile(sidebarSource);
+
+			  for(var i = 0; i < data.length; i++){
+			  	var card = data[i];
+			  	var marker = new google.maps.Marker({
+					    position: new google.maps.LatLng(card.address.geo.lat, card.address.geo.lng),
+					    map: map,
+					    title:"Hello World!"
+					});
+					var infowindow = new google.maps.InfoWindow({
+				      content: infoTemplate(card)
+				  });
+
+				  // infowindow.open(map, marker);
+				  (function(marker, infowindow){
+					  google.maps.event.addListener(marker, 'click', function() {
+				      infowindow.open(map,marker);
+				    });
+			    })(marker, infowindow);
+
+				  $('#sidebar').append( sidebarTemplate(card) );
+			  }
+			}
+
+			$(function(){
+				init();
+
+				$(document).on('click', '.sidebarcard', function(e){
+					var data = $(this).data();
+					console.log(data);
+					map.panTo(new google.maps.LatLng(data.lat, data.lng));
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Handlebars Demo</title>
+	</head>
+	<body>
+
+		<script id="world" type="text/x-handlebars-template">
+			<div class="world-data">
+				<h1>{{header}}</h1>
+				<p>{{content}}</p>
+
+				{{#if shouldPrintMessage}}
+					<h3>Here is a special message</h3>
+				{{else}}
+					<h3>You dont get a special message</h3>
+				{{/if}}
+
+				<h2>Some Cool Locations in the World</h2>
+				<ul>
+					{{#each coolLocations}}
+						<li>{{this}}</li>
+					{{/each}}
+				</ul>
+
+				<h2>Some capital cities</h2>
+				<ul>
+					{{#each cities}}
+						<li> <strong>{{@key}}</strong> - {{this}}</li>
+					{{/each}}
+				</ul>
+			</div>
+		</script>
+
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="handlebars_demo3.js"></script>
+	</body>
+</html>
