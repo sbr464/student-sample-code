@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <title>Angry Emails</title>
+</head>
+<body>
+
+<div class="container">
+
+	<div class="compose">
+		<form id="composeForm">
+			<label>
+				Sender: 
+				<select id="sender" name="sender">
+					<option value="1">Pissed Off Bird</option>
+					<option value="2">Cantankerous Bird</option>
+					<option value="3">Insomnia Bird</option>
+				</select>
+			</label>
+
+			<label>
+				Receiver: 
+				<select id="receiver" name="receiver">
+					<option value="1">Pissed Off Bird</option>
+					<option value="2">Cantankerous Bird</option>
+					<option value="3">Insomnia Bird</option>
+				</select>
+			</label>
+
+			<label>
+				Subject: 
+				<input type="text" name="subject">
+			</label>
+
+			<label>
+				Message: 
+				<textarea name="body"></textarea>
+			</label>
+
+			<input id="submit" type="submit" value="Send">
+			<input id="process" type="button" value="Process">
+
+		</form>
+	</div>
+
+	<div class="display">
+		<img id="server" class="icon" src="images/server.png">
+		<img id="pissed-off-bird" class="user icon" src="images/pissed-off-bird.png" data-id="1">
+		<img id="cantankerous-bird" class="user icon" src="images/cantankerous-bird.png" data-id="2">
+		<img id="insomnia-bird" class="user icon" src="images/insomnia-bird.png" data-id="3">
+	</div>
+
+
+</div>
+
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
+<script src="utility.js"></script>
+<script src="email-model.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>

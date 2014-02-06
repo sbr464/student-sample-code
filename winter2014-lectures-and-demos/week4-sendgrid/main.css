@@ -1,0 +1,45 @@
+.compose {
+	float: left;
+	width: 25%;
+}
+
+.display {
+	height: 200px;
+	background-color: #dedede;
+	margin: 50px;
+	overflow: auto;
+	padding: 20px;
+	position: relative;
+}
+
+.icon {
+	width: 50px;
+}
+
+.icon-small {
+	width: 25px;
+}
+
+#server {
+	position: absolute;
+	top: 95px;
+	left: 20px;
+}
+
+#pissed-off-bird {
+	position: absolute;
+	top: 30px;
+	left: 350px;
+}
+
+#cantankerous-bird {
+	position: absolute;
+	top: 95px;
+	left: 350px;
+}
+
+#insomnia-bird {
+	position: absolute;
+	top: 160px;
+	left: 350px;
+}
