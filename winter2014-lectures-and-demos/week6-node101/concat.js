@@ -1,5 +1,5 @@
 // concatenate two files, and output the combined file
-// e.g. node concat.js
+// e.g. node concat.js output.txt file1.txt file2.txt
 
 var fs = require('fs');
 
@@ -26,4 +26,3 @@ fs.readFile(inputFile1, function(err, file1Data) {
 
 });
 
-// executed in parallel
