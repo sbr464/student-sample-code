@@ -10,5 +10,10 @@ var orchard = [
 module.exports = {
 	findAll: function() {
 		return orchard.slice();
+	},
+	find: function(fruit) {
+		return orchard.filter(function(tree) {
+			return tree === fruit;
+		});
 	}
 };

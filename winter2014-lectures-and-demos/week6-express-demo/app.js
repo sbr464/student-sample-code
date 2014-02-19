@@ -7,6 +7,7 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var indexController = require('./controllers/index.js');
+var fruitController = require('./controllers/fruit.js');
 
 var app = express();
 
@@ -29,9 +30,8 @@ if ('development' == app.get('env')) {
 
 /* ROUTING */
 
-// Home Page
 app.get('/', indexController.index);
-
+app.get('/:fruit', fruitController.fruit);
 
 /* START SERVER */
 http.createServer(app).listen(app.get('port'), function(){
