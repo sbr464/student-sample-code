@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	h1= title
+	p Welcome to our #{title}
+
+	for tree in trees
+		a(href='/' + tree)
+			img.tree(src='images/#{tree}.png')
