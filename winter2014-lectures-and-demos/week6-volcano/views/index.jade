@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	.jumbotron
+		h1 Active Volcano Tours!
+		h2 The 
+			span.hot Hottest 
+			| Tours in Town
+
+	.row
+		for volcano in volcanoes
+			.col-md-3
+				.hot-square
+					p.square-label.pull-right= volcano.location
+					h3.square-title
+						a.hot-link(href='/' + volcano.name)= volcano.name

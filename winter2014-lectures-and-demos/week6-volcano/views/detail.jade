@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	.row
+		.col-sm-6.col-sm-offset-3
+			.hot-square
+				p.square-label.pull-right= volcano.location
+				h3.square-title= volcano.name
+				p.square-description= volcano.description
