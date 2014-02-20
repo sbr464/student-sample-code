@@ -1,0 +1,7 @@
+h1 #{user.name}
+
+h2 Current Location: #{location.name}
+
+form(method="post", action="/users/"+user.id+"?_method=PUT")
+  input(type="hidden", name="location_id", value=(user.location_id+1))
+  button Go to next location

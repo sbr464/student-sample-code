@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+  h1 Posts
+  div
+    for post in posts
+      article
+        header
+          h1
+            a(href="/posts/"+post.id) #{post.title}
