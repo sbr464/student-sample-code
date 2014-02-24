@@ -8,18 +8,28 @@ var UserModel = require('../models/usermodel');
 var UserController = module.exports = {
 
   list: function(req, res){
-    var users = UserModel.findAll();
+    UserModel.find({}, function (err, docs) {
+      console.log('users', docs);
+      res.render('users/list', {users:docs});
+    });
 
-    res.render('users/list', {users:users});
+    
   },
 
   detail: function (req, res) {
-    res.render('users/detail');
+    UserModel.findById(req.param('id'), function (err, doc) {
+      res.render('users/detail', {user:doc});
+    });
+    
   },
 
-  create: function (req, res) {},
+  create: function (req, res) {
 
-  update: function (req, res) {},
+  },
+
+  update: function (req, res) {
+    
+  },
 
   delete: function (req, res) {}
 

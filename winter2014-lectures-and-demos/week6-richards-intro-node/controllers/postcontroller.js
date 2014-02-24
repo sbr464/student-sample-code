@@ -16,12 +16,13 @@ var PostController = module.exports = {
   detail: function (req, res) {
     var post_id = req.param('id');
     var post = PostModel.findById(post_id);
+    var comments = CommentModel.findAll({post_id:post_id});
 
     if (!post) {
       return res.render(404, 'notfound');
     }
 
-    res.render('posts/detail', {post:post});
+    res.render('posts/detail', {post:post, comments:comments});
   },
 
   create: function (req, res) {},
