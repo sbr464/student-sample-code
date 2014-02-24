@@ -7,6 +7,7 @@ var express = require('express');
 var routes = require('./routes');
 var UserController = require('./controllers/usercontroller');
 var PostController = require('./controllers/postcontroller');
+var CommentController = require('./controllers/commentcontroller');
 var http = require('http');
 var path = require('path');
 
@@ -33,6 +34,11 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+app.configure(function () {
+  var mongoose = require('mongoose');
+  mongoose.connect('mongodb://localhost/blog');
+});
+
 /* ROUTES */
 
 app.get('/', routes.index);
@@ -47,6 +53,9 @@ app.delete('/users/:id', UserController.delete);
 // POSTs
 app.get('/posts', PostController.list);
 app.get('/posts/:id', PostController.detail);
+
+// COMMENTS
+app.get('/comments', CommentController.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
