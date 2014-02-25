@@ -1,0 +1,24 @@
+extends layout
+
+block content
+	.jumbotron
+		h1 Welcome to our Candy Store
+		h2 The finest candy in <del>Boulder</del> the Universe.
+
+	.row
+		.col-sm-10
+			for item in items
+				.col-sm-5.col-sm-offset-1
+					.item(data-id=item.product._id.toString())
+						h2.item-name= item.product.name
+						.item-price= item.product.price
+						p.item-description= item.product.description
+						p.item-quantity.text-muted #{item.quantity} remaining
+						button.item-add.btn.btn-primary Add to Cart
+
+		.col-sm-2
+			.order
+				h2 Order
+				ul
+					for item in order.items
+						li #{item.product.name} (#{item.quantity})
