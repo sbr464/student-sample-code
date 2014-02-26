@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  a(href='/book') Add Books...
+  table
+    thead
+      tr
+        td Title
+        td Author
+        td Year Published
+        td Delete
+    tbody
+      for book in books
+        tr
+          td= book.title
+          td= book.author
+          td= book.yearPublished
+          td: a(href='/book/remove/#{book._id}') Delete
