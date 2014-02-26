@@ -34,6 +34,7 @@ InventoryItemSchema.statics.populate = function() {
 		})
 	];
 
+
 	products
 		.map(function() { return Math.floor(Math.random() * INVENTORY_MAX);  })
 		.forEach(function(quantity, i) { 

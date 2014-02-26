@@ -1,18 +1,27 @@
-var ItemModel = require('../models/inventory-item-model.js');
-var OrderModel = require('../models/order-model.js');
+var ItemInventoryModel = require('../models/inventory-item-model.js');
+var OrderItemModel = require('../models/order-item-model.js');
 
 module.exports = {
 
 	list: function(req, res) {
 
-		ItemModel.find({}, function(err, items) {
+		// get all inventory items
+		ItemInventoryModel.find({}, function(err, inventoryItems) {
 		  if(err) return console.log(err);
-			console.log('test');
 
-			res.render('items', { 
-				items: items,
-				order: { items: [] }
-			});
+		  // get all order items
+		  OrderItemModel.find({}, function(err, orderItems) {
+			  if(err) return console.log(err);
+
+			  console.log('orderItems', orderItems);
+		    
+		    // render the items view
+				res.render('items', { 
+					inventoryItems: inventoryItems,
+					order: orderItems
+				});
+		  })
+
 
 		});
 
@@ -26,11 +35,11 @@ module.exports = {
 
 		// get the inventory item and decrement the quantity
 		var productid = +req.params.productid;
-		var item = ItemModel.findInventoryItem(productid);
+		var item = ItemInventoryModel.findInventoryItem(productid);
 		item.quantity--;
 
 		// create a new order item and add it to the current order
-		OrderModel.create(item.product, 1);
+		OrderItemModel.create(item.product, 1);
 
 		// send the user back to the items page
 		res.redirect('/items');
@@ -46,7 +55,7 @@ module.exports = {
 
 	/** DEV ONLY */
 	populate: function(req, res) {
-		ItemModel.populate();
+		ItemInventoryModel.populate();
 		res.send('Items populating... please wait... please...')
 	}
 

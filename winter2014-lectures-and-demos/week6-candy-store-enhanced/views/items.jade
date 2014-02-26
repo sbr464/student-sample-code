@@ -7,18 +7,25 @@ block content
 
 	.row
 		.col-sm-10
-			for item in items
+			for item in inventoryItems
 				.col-sm-5.col-sm-offset-1
-					.item(data-id=item.product._id.toString())
+					.item(data-id=item._id.toString())
 						h2.item-name= item.product.name
 						.item-price= item.product.price
 						p.item-description= item.product.description
-						p.item-quantity.text-muted #{item.quantity} remaining
+						p.text-muted
+								span.item-quantity= item.quantity
+								span.item-quantity-label  remaining
 						button.item-add.btn.btn-primary Add to Cart
 
-		.col-sm-2
-			.order
-				h2 Order
-				ul
-					for item in order.items
-						li #{item.product.name} (#{item.quantity})
+	script.
+		var order = #{order};
+
+	//- .col-sm-2
+		.order
+			h2 Order
+			ul
+				for item in order
+					li #{item.product.name} (#{item.quantity})
+				else
+					li Your cart is empty.

@@ -1,8 +1,9 @@
-var express = require('express')
-  , http = require('http')
-  , path = require('path')
-  , mongoose = require('mongoose')
-  , itemController = require('./controllers/item-controller.js');
+var express = require('express'),
+  http = require('http'),
+  path = require('path'),
+  mongoose = require('mongoose'),
+  itemController = require('./controllers/item-controller.js'),
+  orderController = require('./controllers/order-controller.js');
 
 var app = express();
 
@@ -36,6 +37,8 @@ app.post('/items/add/:productid', itemController.create);
 app.put('/items/:id/edit', itemController.update);
 app.delete('/items/:id/delete', itemController.remove);
 
+// order
+app.post('/order/add/:productid', orderController.create);
 
 // start server
 http.createServer(app).listen(app.get('port'), function(){

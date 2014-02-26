@@ -6,4 +6,10 @@ var ProductSchema = new mongoose.Schema({
 	description: String
 });
 
+ProductSchema.options.toObject = {
+	transform: function (doc, ret, options) {
+	  ret._id = ret._id.toString();
+	}
+};
+
 var ProductModel = module.exports = mongoose.model('product', ProductSchema);
