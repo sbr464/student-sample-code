@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h5 ToDo List
+  form#new-item(action="/addItem", method="post")
+    .form-group
+      input#new-title(type="text", name="title", placeholder="Todo Item...")
+    .form-group
+      input(type="submit", value="Add")
+  form(action="/filter", method="post")
+    .form-group
+      input#filter-field(type="text", name="filter", placeholder="Filter...")
+  ul#items
+    for todoItem in todos
+      li= todoItem.title
