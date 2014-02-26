@@ -19,7 +19,7 @@ block content
 						button.item-add.btn.btn-primary Add to Cart
 
 	script.
-		var order = #{order};
+		var order = !{JSON.stringify(order)};
 
 	//- .col-sm-2
 		.order
