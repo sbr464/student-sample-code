@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  a(href='/book') Add Books...
+  table
+    thead
+      tr
+        td Title
+        td Author
+        td Year Published
+        td Delete
+    tbody
+      for book in books
+        tr.bookItem(data-id="#{book._id}")
+          td= book.title
+          td= book.author
+          td= book.yearPublished
+          td: input.delete(type='checkbox')
