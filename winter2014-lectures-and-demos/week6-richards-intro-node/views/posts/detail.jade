@@ -1,4 +1,55 @@
 article
   header
     h1 #{post.title}
-    p #{post.body}
+  p #{post.body}
+
+  form#comment(action="/comments")
+    textarea
+    button Add Comment
+  
+  script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js")
+  script.
+    (function () {
+
+      $.ajax({
+        url:"/comments",
+        data: {post_id:0},
+        dataType:'json',
+        success: function (comments) {
+          console.log('success', arguments);
+          var html = '<ol id="comments">';
+          comments.forEach(function (comment) {
+            html += '<li>'+comment.body+'</li>';
+          });
+          html += '</ol>';
+          $('#comment').before(html);
+        },
+        error: function () {
+          $('body').append('<p>There was an error loading comments...</p>');
+        }
+      }); // end $.ajax
+
+      $('#comment').submit(function (event) {
+
+
+        event.preventDefault();
+        var comment = $(this).find('textarea').val();
+
+        $.ajax({
+          url:"/comments",
+          type:"POST",
+          data:{post_id:0, comment:comment},
+          dataType:"json",
+          success: function (comment) {
+            $('#comments').append('<li>'+comment.body+'</li>');
+            $(this).find('textarea').val('');
+          },
+          error: function () {
+            console.log('error', arguments);
+          }
+        });
+
+      });
+
+
+    })(); // immediately invoked function expression
