@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  a(href='/') View Books
+  form#new-book(action='/book/add', method='post')
+    .form-group
+      input(type='text', name='title', placeholder='Title...')
+    .form-group
+      input(type='text', name='author', placeholder='Author...')
+    .form-group
+      input(type='text', name='yearPublished', placeholder='Year Published...')
+    .form-group
+      input(type='submit', value='Add Book')
