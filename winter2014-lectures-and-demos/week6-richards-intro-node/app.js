@@ -54,8 +54,10 @@ app.delete('/users/:id', UserController.delete);
 app.get('/posts', PostController.list);
 app.get('/posts/:id', PostController.detail);
 
+
 // COMMENTS
 app.get('/comments', CommentController.list);
+app.post('/comments', CommentController.create);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
