@@ -11,9 +11,30 @@ var fs = require('fs');
 
 var app = express();
 
+/*
+
+  AMAZON URLs
+
+  sign up: http://aws.amazon.com/s3/
+  access account: https://console.aws.amazon.com/s3/home
+  access credentials: https://console.aws.amazon.com/iam/home?#security_credential
+
+  CREDENTIALS
+
+  In the credentials page, select "Access keys", then
+  generate a new access key.
+
+  BUCKET
+
+  In the amazon s3 console, create a bucket
+  and enter the name below.
+
+ */
+
 var KEY = '<amazon key>';
 var SECRET = '<amazon secret>';
 var BUCKET = '<bucket name>';
+
 
 aws.config.update({
   accessKeyId: KEY,
