@@ -3,7 +3,8 @@ var express = require('express'),
   path = require('path'),
   mongoose = require('mongoose'),
   itemController = require('./controllers/item-controller.js'),
-  orderController = require('./controllers/order-controller.js');
+  orderController = require('./controllers/order-controller.js'),
+  inventoryController = require('./controllers/inventory-controller.js');
 
 var app = express();
 
@@ -34,11 +35,14 @@ app.get('/', itemController.list);
 app.get('/items', itemController.list);
 app.get('/items/:id', itemController.detail);
 app.post('/items/add/:productid', itemController.create);
-app.put('/items/:id/edit', itemController.update);
-app.delete('/items/:id/delete', itemController.remove);
+app.put('/items/:id', itemController.update);
+app.delete('/items/:id', itemController.remove);
 
 // order
-app.post('/order/add/:productid', orderController.create);
+app.post('/order', orderController.create);
+
+// inventory
+app.put('/inventory/:id', inventoryController.update);
 
 // start server
 http.createServer(app).listen(app.get('port'), function(){

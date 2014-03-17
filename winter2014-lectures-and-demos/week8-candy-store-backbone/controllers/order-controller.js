@@ -13,45 +13,21 @@ module.exports = {
 	
 	create: function(req, res) {
 
-		// find the inventory item and decrement the quantity
-		ItemInventoryModel.findByIdAndUpdate(req.params.productid, { $inc: { quantity: -1 }}, function(err, inventoryItem) {
+		// create new order item 
+		var newOrderItem = new OrderItemModel(req.body);
 
-			// error
+		// save the order item
+		newOrderItem.save(function(err, data) {
+
+			// error handling
 			if(err) {
 				console.log(err);
 				return res.send(500);
 			}
 
-			// create new order item 
-			var newOrderItem = new OrderItemModel({
-				product: inventoryItem.product,
-				quantity: 1
-			});
-
-			// save the order item
-			newOrderItem.save(function(err, data) {
-
-				// error handling
-				if(err) {
-					console.log(err);
-					return res.send(500);
-				}
-
-				// send back quantity
-			  res.send({
-			  	quantity: inventoryItem.quantity,
-			  	orderItem: newOrderItem
-			  });
-			})
+			// send back quantity
+		  res.send(newOrderItem);
 		});
-
-		// get the inventory item and decrement the quantity
-		// var productid = +req.params.productid;
-		// var item = ItemInventoryModel.findInventoryItem(productid);
-		// item.quantity--;
-
-		// // create a new order item and add it to the current order
-		// OrderItemModel.create(item.product, 1);
 	},
 	
 	update: function(req, res) {

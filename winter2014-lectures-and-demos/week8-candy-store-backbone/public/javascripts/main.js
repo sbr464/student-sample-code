@@ -1,23 +1,20 @@
+var models = {
+};
+
 $(function() {
 
-	$(document).on('click', '.item-add', function() {
+	models.shoppingCart = new ShoppingCartCollection();
+	models.shoppingCart.reset(order);
 
-		var itemEl = $(this).closest('.item');
+	var shoppingCartView = new ShoppingCartView(models.shoppingCart);
+	shoppingCartView.$el = $('#shopping-cart');
+	shoppingCartView.render();
 
-		// get the item's product id
-	  var id = itemEl.attr('data-id');
+	models.inventory = new InventoryCollection();
+	models.inventory.reset(inventoryItems);
 
-	  // request that the item is added to the current order
-	  $.post('/order/add/' + id, function(data) {
-
-	  	// update the inventory item quantity
-	    itemEl.find('.item-quantity').text(data.quantity);
-
-	    // update the shopping cart
-	    console.log(data);
-
-	  });
-
-	});
+	var inventoryView = new InventoryView(models.inventory);
+	inventoryView.$el = $('#inventory');
+	inventoryView.render();
 
 });

@@ -7,25 +7,37 @@ block content
 
 	.row
 		.col-sm-10
-			for item in inventoryItems
-				.col-sm-5.col-sm-offset-1
-					.item(data-id=item._id.toString())
-						h2.item-name= item.product.name
-						.item-price= item.product.price
-						p.item-description= item.product.description
-						p.text-muted
-								span.item-quantity= item.quantity
-								span.item-quantity-label  remaining
-						button.item-add.btn.btn-primary Add to Cart
+			#inventory
+
+		.col-sm-2
+			#shopping-cart
+
+
+	//- TEMPLATES
+
+	#inventory-item-template.template
+		.col-sm-5.col-sm-offset-1
+			.item
+				h2.item-name NAME
+				.item-price PRICE
+				p.item-description DESCRIPTION
+				p.text-muted
+						span.item-quantity QUANTITY
+						span.item-quantity-label  remaining
+				button.item-add.btn.btn-primary Add to Cart
+
+	#shopping-cart-template.template
+		.order
+			h2 Order
+			ul.order-items
+
+	#order-item-template.template
+		li
+			span.name NAME
+			|  (
+			span.quantity QUANTITY
+			| )
 
 	script.
 		var order = !{JSON.stringify(order)};
-
-	//- .col-sm-2
-		.order
-			h2 Order
-			ul
-				for item in order
-					li #{item.product.name} (#{item.quantity})
-				else
-					li Your cart is empty.
+		var inventoryItems = !{JSON.stringify(inventoryItems)};

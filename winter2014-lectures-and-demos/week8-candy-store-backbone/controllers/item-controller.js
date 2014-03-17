@@ -44,7 +44,19 @@ module.exports = {
 	},
 	
 	update: function(req, res) {
-		res.send('update');
+		OrderItemModel.findByIdAndUpdate(
+			req.params.id, 
+			{quantity: req.body.quantity}, 
+			function(err, doc) {
+			  if(err) {
+			  	console.log(err);
+			  	res.send(500, 'update failed');
+			  }
+			  else {
+				  res.send('order item updated')
+				}
+			}
+		);
 	},
 	
 	remove: function(req, res) {
