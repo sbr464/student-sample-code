@@ -21,13 +21,27 @@ app.use(express.static(path.join(__dirname, 'public')));
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
-  mongoose.connect('mongodb://localhost/candystore');
+ //  mongoose.connect('mongodb://localhost/candystore');
 
-	app.get('/items/populate', itemController.populate);
+	// app.get('/items/populate', itemController.populate);
 }
 else {
 	throw new Error('TODO: add production Mongo database.')
 }
+
+
+
+if (global.process.env.MONGOHQ_URL) {
+  mongoose.connect(global.process.env.MONGOHQ_URL);
+} else {
+  mongoose.connect('mongodb://localhost/candystore');
+}
+
+
+
+
+
+app.get('/items/populate', itemController.populate);
 
 // items
 app.get('/', itemController.list);
