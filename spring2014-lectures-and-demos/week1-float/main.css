@@ -1,0 +1,16 @@
+.container {
+	text-align: center;
+	background-color: #ccc;
+	width: 700px;
+	margin: 0 auto;
+	overflow: hidden; /* clearfix */
+}
+
+.product-image {
+	width: 200px;
+	float: right;
+}
+
+p:first {
+	float: left;
+}
