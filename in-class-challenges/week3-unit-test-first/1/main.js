@@ -1,0 +1,2 @@
+var first = function() {
+};
