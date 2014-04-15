@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="
+				user-scalable=no,
+				initial-scale=1.0,
+				maximum-scale=1.0,
+				minimum-scale=1.0,
+				width=device-width
+			">
+		<title>Tests</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				font-size: 20px;
+				color: #000;
+			}
+
+			html.opacity .container {
+				opacity: 0.5;
+			}
+
+			.container {
+				max-width: 200px;
+				/*min-width: 100px;*/
+				margin: auto;
+			}
+
+			.sub {
+				width: 33.3%;
+				float: left;
+			}
+
+			.div1 {background-color: #F00;}
+			.div2 {
+				background-color: #00F;
+				font-size: 1.5em;
+			}
+			.div3 {background-color: #0F0;}
+
+			@media screen and (max-width: 100px) {
+				body {
+					font-size: 10px;
+				}
+				.sub {
+					width: 100%;
+					float: none;
+				}
+			}
+			@media screen and (min-width: 200px){
+				.sub {
+					color: white;
+					background-color: #000;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="sub div1">Hello World</div>
+			<div class="sub div2">Also hello World</div>
+			<div class="sub div3">Also hello World</div>
+		</div>
+
+		<script src="modernizr.js"></script>
+	</body>
+</html>

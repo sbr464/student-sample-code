@@ -1,0 +1,11 @@
+/*
+	Starter page styles
+*/
+
+body {
+	margin: 0;
+	padding: 40px;
+	background-color: #EFEFEF;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 12px;
+}

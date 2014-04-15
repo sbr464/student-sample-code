@@ -1,0 +1,19 @@
+.container {
+	text-align: center;
+	background-color: #ccc;
+	width: 700px;
+	margin: 0 auto;
+}
+
+.col {
+	width: 10%;
+	height: 400px;
+	border: solid 5px blue;
+	display: inline-block;
+	text-align: left;
+	margin-right: 50px;
+}
+
+.col:last-child {
+	margin-right: 0;
+}

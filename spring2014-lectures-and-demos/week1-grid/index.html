@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Grid</title>
+		<link rel="stylesheet" href="grid.css">
+		<style>
+			.container {
+				max-width: 300px;
+				margin: auto;
+			}
+			@media screen and (max-width: 300px){
+				.container {
+					max-width: 200px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-1-3">Col Left</div>
+				<div class="col-2-3">
+					<div class="row">
+						<div class="col-1-3">Col 1</div>
+						<div class="col-2-3">Col 2</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-1-4">Col 1</div>
+				<div class="col-1-2">Col 2</div>
+				<div class="col-1-4">Col 3</div>
+			</div>
+			
+			<!-- 1/3, 1/3, 1/3 -->
+			<div class="row">
+				<div class="col-1-3">Col1</div>
+				<div class="col-1-3">Col2</div>
+				<div class="col-1-3">Col3</div>
+			</div>
+
+			<!-- 1/3, 2/3 -->
+			<div class="row centered">
+				<div class="col-1-3">Col1</div>
+				<div class="col-2-3">Col2 which can be longer</div>
+			</div>
+			
+			<!-- 1/2, 1/2 -->
+			<div class="row">
+				<div class="col-1-2">Col1</div>
+				<div class="col-1-2">Col2</div>
+			</div>
+			
+			<!-- 1/4, 1/4, 1/4, 1/4 -->
+			<div class="row">
+				<div class="col-1-4">Col 1</div>
+				<div class="col-1-4">Col 2</div>
+				<div class="col-1-4">Col 3</div>
+				<div class="col-1-4">Col 4</div>
+			</div>
+			
+			<!-- 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 -->
+			<div class="row">
+				<div class="col-1-8">Col1</div>
+				<div class="col-1-8">Col2</div>
+				<div class="col-1-8">Col3</div>
+				<div class="col-1-8">Col4</div>
+				<div class="col-1-8">Col5</div>
+				<div class="col-1-8">Col6</div>
+				<div class="col-1-8">Col7</div>
+				<div class="col-1-8">Col8</div>
+			</div>
+		</div>
+	</body>
+</html>
