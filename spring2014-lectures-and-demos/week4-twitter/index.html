@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+  <form action="#" id="new-tweet" class="hidden">
+    <h1>New Tweet:</h1>
+    <div class="form-group">
+      <input type="text" name="username" placeholder="Username...">
+    </div>
+    <div class="form-group">
+      <input type="text" name="tweet" placeholder="Tweet...">
+    </div>
+    <div class="form-group">
+      <input type="submit">
+    </div>
+  </form>
+  <button class="form-view">Add Tweet</button>
+
+  <h1>Tweets:</h1>
+  <ul id='feed'></ul>
+
+
+  <div class="hidden">
+    <li class="tweet-template original">
+      <h3 class="title">Tweet Title</h3>
+      <h6 class="date"></h6>
+      <p class="message">Tweet message</p>
+      <a href="#" class="remove">✖</a>
+    </li>
+  </div>
+	
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>
