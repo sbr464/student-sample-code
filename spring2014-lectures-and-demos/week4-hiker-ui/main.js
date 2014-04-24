@@ -75,6 +75,14 @@ var createMountain = function(mountain) {
  * MAIN
  *********************************/
 
+
+// localStorage Summary
+// convert an object to a string (to store)
+// JSON.stringify(obj)
+// convert a string back into an object (to manipulate)
+// JSON.parse(str)
+
+
 // if this is the first time we're running the app, create the data object with empty arrays
 // otherwise, retrieve data from localStorage
 // use JSON.parse to convert string into Javascript object
