@@ -1,6 +1,12 @@
 var express = require('express');
 var app = express();
+
+// register jade as the view engine
+// internally this will require('jade') so we need to ensure that jade is installed with npm install --save jade
 app.set('view engine', 'jade');
+
+// specify which directory stores all the jade files
+// so when we call res.render('mypage'), it will automatically load 'views/mypage.jade'
 app.set('views', __dirname + '/views');
 
 // list of hikes
