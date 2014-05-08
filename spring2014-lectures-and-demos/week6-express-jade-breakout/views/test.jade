@@ -1,0 +1,13 @@
+extends layout
+
+//- Define the content of headerLinks to include
+//- our static main.css file
+block headerLinks
+  link(rel="stylesheet", type="text/css", href="/main.css")
+
+block content
+  h1 Test Jade File: #{title}
+
+//- Define the content of the footer to include main.js
+block footerScripts
+  script(type="text/javascript", src="/main.js")

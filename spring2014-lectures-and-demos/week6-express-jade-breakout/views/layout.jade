@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title= title
+    //- Pull in Bootstrap's css from the CDN
+    link(rel="stylesheet", type="text/css", href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css")
+
+    //- A page block to allow sub-templates to include
+    //- styles in the header
+    block headerLinks
+  body
+    block content
+
+    //- Include jQuery and Bootstrap js from CDNs
+    script(type="text/javascript", src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js")
+    script(type="text/javascript", src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js")
+
+    //- Page block to allow sub-templates to include
+    //- js in the footer
+    block footerScripts
