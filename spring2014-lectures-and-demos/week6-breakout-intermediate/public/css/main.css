@@ -1,0 +1,15 @@
+body {
+	color: deeppink;
+	background-color: papayawhip;
+	font-family: "Helvetica Neue";
+}
+
+h1 {
+	font-weight: 200;
+	font-size: 52px;
+}
+
+.container {
+	margin: 0 auto;
+	width: 700px;
+}
