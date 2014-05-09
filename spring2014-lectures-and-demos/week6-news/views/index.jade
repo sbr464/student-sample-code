@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 Here's the News!
+  ul
+    for item in newsItems
+      //- "li: a()=" just for shorthand for:
+      //- li
+      //-   a()= item.title
+      li: a( href='/view/#{item.url}' ) Article - #{item.title}
