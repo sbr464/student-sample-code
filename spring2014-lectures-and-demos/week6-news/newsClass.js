@@ -15,6 +15,7 @@ var NewsItem = function(props){
   this.url = this.title
     .toLowerCase()
     .replace(new RegExp(' ', 'g'), '-');
+  // .replace(/ /g, '-') -> same as above, but shorthand
 
   this.getDescription = function(){
     return this.description;
