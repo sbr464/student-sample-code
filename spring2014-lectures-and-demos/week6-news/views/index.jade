@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1 Here's the News!
+
+  form(action="/newArticle", method="post")
+    input(type="text", placeholder="Title", name="title")
+    input(type="text", placeholder="Author", name="author")
+    input(type="text", placeholder="Description", name="description")
+    input(type="text", placeholder="Date", name="date")
+    input(type="submit")
+
+  ul
+    for item in newsItems
+      //- "li: a()=" just for shorthand for:
+      //- li
+      //-   a()= item.title
+      //- li: a( href='/view/#{item.url}' ) Article - #{item.title}
+      li
+        a( href='/view/#{item.url}' ) Article - #{item.title}
+        | &nbsp;
+        a( href='/delete/#{item.url}' ) Delete article

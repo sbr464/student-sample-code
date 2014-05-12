@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+  head
+    title= pageTitle
+    - var formula = 'x < y'
+    h2 Formula is: #{formula}
+    h2= formula
+    - var markup = "<b>Yes</b>!"
+    h3 Our markup is: !{markup}
+    h3!= markup
+    div#container.col.another
+      p
+        a(href='http://refactoru.com' target="_blank") RefactorU
+      if youAreUsingJade
+        p You are amazing
+      else
+        p Get on it!
+      p
+        | Hi, this is
+        | more text
+        | on multiple lines
+      p.
+        Jade is a terse and simple
+        templating language with a
+        strong focus on performance
+        and powerful features.
+      ul
+        for i in [1,2,3]
+          li= i
+      ol
+        for value,key in {a: 1, b: 2, c: 3}
+          li The value of #{key} is #{value}.

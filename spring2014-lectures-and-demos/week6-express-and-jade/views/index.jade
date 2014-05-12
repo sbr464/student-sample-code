@@ -1,0 +1,16 @@
+//- include in layout.jade
+extends layout
+
+//- replace 'block content' in layout.jade with everything under 'block content' here
+block content
+	h1 Hello Boulder
+	h2 Welcome #{currentUser.name} to the Flatirons!
+	p My favorite hike is #{currentUser.favoriteHike}.
+	ul
+		//- boulderHikes is defined in the view data from our route, thus is available here in the view scope
+		for hike in boulderHikes
+			li= hike
+			//- li #{hike}
+
+//- block scripts
+	script(src='code.jquery.com/...')

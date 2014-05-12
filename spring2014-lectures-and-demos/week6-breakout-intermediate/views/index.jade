@@ -1,0 +1,12 @@
+extends layout
+
+block styles
+	style
+		if theme === 'test'
+			include inject/css/index.css
+
+block content
+	h1.bigheading Hello Boulder!
+
+block scripts
+	script(src="/js/index.js")
