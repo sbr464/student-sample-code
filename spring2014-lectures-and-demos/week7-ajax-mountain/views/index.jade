@@ -1,0 +1,21 @@
+doctype html
+html(lang='en')
+head
+    meta(charset='utf-8')
+    title Ajax Hiker
+    link(rel='stylesheet', type='text/css', href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js')
+    link(rel='stylesheet', type='text/css', href='/styles/main.css')
+  body
+    #announcement.message
+    .narrow
+      h1 Add Mountain
+      form#mountain-form
+        input(type='text', name='name', placeholder='Name')
+        input(type='text', name='elevation', placeholder='Elevation')
+        input.button(type='submit', value='Add')
+      #mountains
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    script(src='/scripts/main.js')
+
+    //- bootstrap the mountains data
+    script!= 'var mountains = ' + JSON.stringify(mountains) + ';'
