@@ -25,6 +25,8 @@ $(function() {
 	// add a click handler for username items
 	$(document).on('click', '.username', function() {
 
+		$('.description').remove();
+
 		var itemEl = $(this);
 
 		// make a request to the server for the user's data
@@ -33,7 +35,7 @@ $(function() {
 		// if POST: form body (req.body)
 		$.get('/user', { username: itemEl.text() }, function(data) {
 
-			itemEl.append(' - ' + data.description);
+			itemEl.append('<span class="description"> - ' + data.description + '</span>');
 
 		})
 
