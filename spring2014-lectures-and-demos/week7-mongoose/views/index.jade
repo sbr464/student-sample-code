@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	for animal in animals
+		p 
+			p
+				b Name: 
+				| #{animal.name}
+			p
+				b Age: 
+				| #{animal.age}
+		img(width=100,height=100, src='http://www.clker.com/cliparts/E/5/9/A/F/l/lt-blue-baby-elephant-hi.png')

@@ -1,0 +1,10 @@
+{ "_id" : { "$oid" : "53727d3f40390eaf7bd13c6c" }, "age" : 60, "diet" : "herbivore", "name" : "elephant" }
+{ "_id" : { "$oid" : "5372841b8023adfd5e70dc93" }, "age" : 60, "diet" : "herbivore", "name" : "elephant" }
+{ "_id" : { "$oid" : "5372841d8023adfd5e70dc94" }, "age" : 60, "diet" : "herbivore", "name" : "elephant" }
+{ "__v" : 0, "_id" : { "$oid" : "53728857faf0c2fb53228d5f" }, "age" : 60, "name" : "elephant" }
+{ "name" : "elephant", "_id" : { "$oid" : "53729096abfb4b1f5f4957d0" }, "__v" : 0 }
+{ "name" : "elephant", "age" : 10, "_id" : { "$oid" : "537290d86414450a61042e0a" }, "__v" : 0 }
+{ "name" : "elephant", "age" : 20, "_id" : { "$oid" : "5372924ce47fec78647fa641" }, "__v" : 0 }
+{ "name" : "elephant", "age" : 1, "_id" : { "$oid" : "5372927fe47fec78647fa642" }, "__v" : 0 }
+{ "__v" : 0, "_id" : { "$oid" : "537292ece47fec78647fa643" }, "age" : 67, "name" : "tiger!" }
+{ "_id" : { "$oid" : "537293f926d5469e330b04fa" }, "age" : 204, "name" : "turtle!!!!" }
