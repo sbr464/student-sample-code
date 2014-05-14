@@ -1,0 +1,7 @@
+extends layout
+
+block content
+	form(action='/new', method='post')
+		input(name="name")
+		input(name="age")
+		input(type="submit", value="Add Elephant")
