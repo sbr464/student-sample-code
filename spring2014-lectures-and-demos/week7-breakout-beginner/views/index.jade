@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	h1 Hello Boulder!
+	a#weather(href='#') Get Weather
+
+	//- script tag is always evaluated client-side
+	script(src='//code.jquery.com/jquery-2.1.1.min.js')
+	//- path is a root-relative url
+	script(src='/js/index.js')
