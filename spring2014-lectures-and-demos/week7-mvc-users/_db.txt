@@ -1,0 +1,43 @@
+USERS:
+[{
+	"name" : "Brian",
+	"_id" : ObjectId("5374f0a8ad04f70cdd1be232"),
+	"friends" : [ ],
+	"skills" : [
+		"js",
+		"css",
+		"html",
+		"everything"
+	],
+	"__v" : 0
+},
+{
+	"__v" : 0,
+	"_id" : ObjectId("5374ef66e00340bfdb993f0c"),
+	"friends" : [
+		ObjectId("5374f0a8ad04f70cdd1be232")
+	],
+	"games" : [
+		ObjectId("5374f821712f8d20d4e8345b"),
+		ObjectId("5374f843712f8d20d4e8345c"),
+		ObjectId("5374f848712f8d20d4e8345d")
+	],
+	"name" : "Chris",
+	"skills" : [
+		"something",
+		"another thing",
+		"whatever"
+	]
+}]
+
+
+
+
+
+
+GAMES:
+[
+{ "_id" : ObjectId("5374f821712f8d20d4e8345b"), "title" : "CS:GO" },
+{ "_id" : ObjectId("5374f843712f8d20d4e8345c"), "title" : "Trials: Fusion" },
+{ "_id" : ObjectId("5374f848712f8d20d4e8345d"), "title" : "Spaceteam" }
+]

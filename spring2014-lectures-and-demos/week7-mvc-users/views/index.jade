@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	h1 Users
+	form#newuser
+		input#name(type="text", placeholder="Name", name="name")
+		input#skills(type="text", placeholder="Skills (comma-separated)", name="skills")
+		input(type="submit")
+
+	ul#userlist
+		//- Loop through all users
+		for user in users
+			//- Print each user wrapped in an anchor tag
+			//- that will link to /user/view/<mongo id>
+			li: a(href="/user/view/#{user._id}")= user.name

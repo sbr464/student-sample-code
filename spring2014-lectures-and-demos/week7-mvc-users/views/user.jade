@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	h1= name
+	h4 Games
+	ul
+		for game in games
+			li= game
+
+	h4 Skills
+	ul
+		for skill in skills
+			li= skill
+
+	h4 Friends
+	ul
+		for friend in friends
+			li= friend

@@ -1,0 +1,17 @@
+extends layout
+
+block content
+	h1 Chat Rooms
+	//- Allow user to change their username
+	input#username(type="text", placeholder="Username")
+
+	//- Show the list of available rooms
+	#roomList
+		ul#rooms
+
+		input#newroom(type="text", placeholder="Room Name")
+
+	//- The message viewer and new message field
+	#messenger
+		#messages
+		div: input#newmessage(type="text", placeholder="Message")
