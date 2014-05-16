@@ -1,0 +1,19 @@
+extends layout
+
+block content
+	h1 Twitter Finder
+	form#search-form
+		input#search-field(type='text', placeholder='Search')
+
+	#results
+
+
+	//- our handlebars template
+	script#tweet-template(type="text/x-handlebars-template").
+		<!-- the tweet div -->
+		<div class="tweet">
+			<!-- handlebars variable syntax (get the user name) -->
+			<p><strong>{{user.name}}</strong></p>
+			<!-- the tweet text -->
+			<p>{{text}}</p>
+		</div>
