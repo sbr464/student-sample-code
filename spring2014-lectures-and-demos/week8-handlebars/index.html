@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	
+	<div class="container">
+		<h1>This Week's Forecast</h1>
+		<div id="forecasts"></div>
+	</div>
+
+	<script id="weather-template" type="text/x-handlebars-template">
+		<div class="weather">
+			<b>Day:</b> {{day}}
+			<b>Temperature:</b> {{temp}}
+			{{#if hot}}
+			<p class="alert alert-danger">It's going to be hot!</p>
+			{{/if}}
+		</div>
+	</script>
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.2/handlebars.min.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>
