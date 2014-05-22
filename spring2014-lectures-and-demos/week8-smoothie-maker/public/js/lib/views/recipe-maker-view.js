@@ -44,7 +44,7 @@ var RecipeMaker = Backbone.View.extend({
 				$(this).addClass('shake-hard');
 			  next();
 			})
-			.delay(this.options.shakeSHardDuration)
+			.delay(this.options.shakeHardDuration)
 			.queue(function(next) {
 				$(this).removeClass('shake').removeClass('shake-hard');
 			  next();
