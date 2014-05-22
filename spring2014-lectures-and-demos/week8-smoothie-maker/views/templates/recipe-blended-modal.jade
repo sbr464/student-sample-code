@@ -1,0 +1,12 @@
+script(id='recipe-blended-modal' type='text/x-handlebars-template')
+	.modal-blended.modal.fade
+		.modal-dialog
+			.modal-content
+				.modal-body
+					button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+					.text-center
+						h4.modal-title Congratulations! You made...
+						h1.text-fat {{name}}
+						p Would you like to save this recipe?
+						button.btn.btn-default.space-sm(type='button', data-dismiss='modal') Throw Away
+						button.btn.btn-primary.space-sm.save(type='button') Save Recipe

@@ -1,0 +1,113 @@
+/* defaults */
+* { box-sizing: border-box; }
+
+body {
+	font-size: 20px;
+	font-weight: 300;
+}
+
+h1,h2,h3 {
+	font-weight: 300;
+}
+
+a {
+	cursor: pointer;
+}
+
+/* helpers */
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+
+.left { float: left; }
+.right { float: right; }
+
+.circle { 
+	border-radius: 999px;
+	display: inline-block;
+}
+
+.space-xs { margin: 5px; }
+.space-sm { margin: 10px; }
+.space-md { margin: 18px; }
+.space-lg { margin: 36px; }
+.space-xl { margin: 48px; }
+
+/* themes */
+.theme-light {
+	color: dimgray;
+	background-color: papayawhip;
+}
+
+.theme-dark {
+	color: white;
+	background-color: dodgerblue;
+}
+
+/* layout */
+.wrapper {
+	display: flex;
+}
+
+/* modules */
+.border {
+	border: solid 15px lightgray;
+	padding: 15px;
+}
+
+.border:hover {
+	border-color: dodgerblue;
+}
+
+.toolbox {
+	height: 100vh;
+	overflow: scroll;
+	padding: 15px;
+}
+
+.text-fat {
+	color: lightgray;
+	font-weight: bold;
+	font-size: 58px;
+}
+.text-fat a {
+	color: lightgray;
+	text-decoration: none;
+}
+
+.mini-zoom {
+	display: inline-block;
+	transition: all 0.5s;
+}
+.mini-zoom:hover {
+	-webkit-transform: scale(1.16);
+}
+
+.deletable:hover {
+	color: firebrick;
+}
+
+.pull-down {
+	position: absolute;
+	bottom: 48px;
+	width: 100%;
+	left: 0;
+}
+
+/* bootstrap overrides */
+.btn {
+	border: none;
+}
+.btn-primary {
+	background-color: dodgerblue;
+}
+
+/* states */
+.disabled:hover {
+	color: inherit !important;
+	cursor: not-allowed;
+}
+.border.disabled:hover {
+	border-color: lightgray !important;
+}
+

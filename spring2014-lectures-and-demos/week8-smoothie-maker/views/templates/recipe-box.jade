@@ -1,0 +1,7 @@
+script(id='recipe-box-template' type='text/x-handlebars-template')
+	h1.space-xl Recipe Box
+	ul.list-unstyled
+	{{#each this}}
+	li
+		a.recipe-line.deletable {{name}}
+	{{/each}}
