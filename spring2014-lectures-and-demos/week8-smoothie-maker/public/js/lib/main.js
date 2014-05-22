@@ -1,15 +1,15 @@
 $(function() {
   
   // fetch the data from the server
-	var recipeBox = new RecipeBox();
+	window.recipeBox = new RecipeBox();
 	var availableIngredients = new AvailableIngredients();
 	recipeBox.fetch({ reset: true });
 	availableIngredients.fetch({ reset: true });
 
 	// create the views and set their models
-	ingredientsChooser = new IngredientsChooser({ collection: availableIngredients });
-	recipeBoxView = new RecipeBoxView({ collection: recipeBox });
-	recipeMaker = new RecipeMaker({ model: new Recipe() });
+	var ingredientsChooser = new IngredientsChooser({ collection: availableIngredients });
+	var recipeBoxView = new RecipeBoxView({ collection: recipeBox });
+	var recipeMaker = new RecipeMaker({ model: new Recipe() });
 
 	// set the rendering destination of the three main views
 	ingredientsChooser.setElement($('#ingredients-chooser')[0]);

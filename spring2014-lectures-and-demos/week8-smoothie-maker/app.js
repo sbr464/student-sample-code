@@ -23,13 +23,13 @@ app.get('/', indexController.view);
 // API
 app.post('/recipes', recipesController.create);
 app.get('/recipes', recipesController.read);
-app.put('/recipes', recipesController.update);
-app.delete('/recipes', recipesController.delete);
+app.put('/recipes/:id', recipesController.update);
+app.delete('/recipes/:id', recipesController.delete);
 
 app.post('/ingredients', ingredientsController.create);
 app.get('/ingredients', ingredientsController.read);
-app.put('/ingredients', ingredientsController.update);
-app.delete('/ingredients', ingredientsController.delete);
+app.put('/ingredients/:id', ingredientsController.update);
+app.delete('/ingredients/:id', ingredientsController.delete);
 
 // start thes server
 var server = app.listen(6813, function() {

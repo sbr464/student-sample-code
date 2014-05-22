@@ -1,5 +1,7 @@
 var Recipe = Backbone.Model.extend({
 
+	idAttribute: '_id',
+
 	defaults: function() {
 		return {
 			name: '',
@@ -23,7 +25,12 @@ var Recipe = Backbone.Model.extend({
 		// if it's already in the smoothie, ignore it
 		if(!_.contains(this.get('ingredients'), ingredient)) {
 			this.get('ingredients').push(ingredient);
-			this.trigger('change', ingredient);
+
+			if(!this.isNew()) {
+				this.save();
+			}
+			
+			this.trigger('change');
 		}
 	},
 
@@ -33,10 +40,13 @@ var Recipe = Backbone.Model.extend({
 	},
 
 	removeById: function(id) {
-		this.set('ingredients', _.filter(this.get('ingredients')), function(ingredient) {
-		  return ingredient._id !== id;
-		});
-		this.trigger('change', ingredient);
+		this.set('ingredients', _.filter(this.get('ingredients'), function(ingredient) {
+		  return ingredient.get('_id') !== id;
+		}));
+		if(!this.isNew()) {
+			this.save();
+		}
+		this.trigger('change');
 	},
 
 	// generate a name for this unique recipe
@@ -71,18 +81,30 @@ var Recipe = Backbone.Model.extend({
 	// serialize recipe to send to server
 	toJSON: function() {
 		return {
+			_id: this.get('_id'),
 			name: this.get('name'),
 			ingredients: this.get('ingredients').map(function(item) {
-				return item.get('_id');
+				return item.toJSON();
 			})
 		}
 	},
 
+	parse: function(res, options) {
+	  return {
+	  	_id: res._id,
+	  	name: res.name,
+	  	ingredients: res.ingredients.map(function(props) {
+	  	  return new Ingredient(props);
+	  	})
+	  }
+	},
+
 	toArray: function() {
 		return {
+			_id: this.get('_id'),
 			name: this.get('name'),
 			ingredients: this.get('ingredients').map(function(item) {
-				return item.attributes;
+				return item.toJSON();
 			})
 		}
 	},

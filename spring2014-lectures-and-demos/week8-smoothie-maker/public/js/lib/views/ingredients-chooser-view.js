@@ -6,6 +6,7 @@ var IngredientsChooser = Backbone.View.extend({
 
 	initialize: function() {
 		this.listenTo(this.collection, "reset", this.render);
+		this.listenTo(this.collection, "change", this.render);
 		this.renderTemplate = Handlebars.compile($('#ingredients-chooser-template').html());
 	},
 

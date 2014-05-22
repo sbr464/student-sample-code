@@ -5,6 +5,7 @@ var RecipeBoxView = Backbone.View.extend({
 	},
 
 	initialize: function() {
+		this.listenTo(this.collection, "reset", this.render);
 		this.listenTo(this.collection, "change", this.render);
 		this.renderTemplate = Handlebars.compile($('#recipe-box-template').html());
 	},
