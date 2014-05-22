@@ -6,9 +6,9 @@ var RecipeMaker = Backbone.View.extend({
 	},
 
 	options: {
-		shakeSlowDuration: 0,//1200,
-		shakeDuration: 0,//1600,
-		shakeHardDuration: 0//3200
+		shakeSlowDuration: 1200,
+		shakeDuration: 1600,
+		shakeHardDuration: 3200
 	},
 
 	initialize: function() {

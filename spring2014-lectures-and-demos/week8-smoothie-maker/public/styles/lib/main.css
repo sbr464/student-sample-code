@@ -37,7 +37,7 @@ a:hover {
 .space-lg { margin: 36px; }
 .space-xl { margin: 48px; }
 
-.indent { margin-left: 48px; }
+.indent { margin-left: 32px; }
 
 /* themes */
 .theme-light {
