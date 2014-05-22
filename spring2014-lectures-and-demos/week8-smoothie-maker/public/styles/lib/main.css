@@ -12,6 +12,10 @@ h1,h2,h3 {
 
 a {
 	cursor: pointer;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
 }
 
 /* helpers */
@@ -42,6 +46,12 @@ a {
 .theme-dark {
 	color: white;
 	background-color: dodgerblue;
+}
+.theme-dark a {
+	color: white;
+}
+.theme-dark a:hover {
+	color: white;
 }
 
 /* layout */

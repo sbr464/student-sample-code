@@ -5,9 +5,22 @@ var RecipeMaker = Backbone.View.extend({
 		'click .recipe-line' : 'remove'
 	},
 
+	options: {
+		shakeSlowDuration: 0,//1200,
+		shakeDuration: 0,//1600,
+		shakeHardDuration: 0//3200
+	},
+
 	initialize: function() {
-		this.listenTo(this.model, "change", this.render);
 		this.renderTemplate = Handlebars.compile($('#recipe-maker-template').html());
+		this.setModel(this.model);
+	},
+
+	setModel: function(model) {
+		this.stopListening(this.model);
+		this.model = model;
+		this.listenTo(this.model, "change", this.render);
+		this.render();
 	},
 
 	blend: function(e) {
@@ -21,23 +34,24 @@ var RecipeMaker = Backbone.View.extend({
 			.finish()
 			.removeClass('shake-hard')
 			.addClass('shake shake-slow shake-constant')
-			.delay(1200)
+			.delay(this.options.shakeSlowDuration)
 			.queue(function(next) {
 				$(this).removeClass('shake-slow');
 			  next();
 			})
-			.delay(1600)
+			.delay(this.options.shakeDuration)
 			.queue(function(next) {
 				$(this).addClass('shake-hard');
 			  next();
 			})
-			.delay(3200)
+			.delay(this.options.shakeSHardDuration)
 			.queue(function(next) {
 				$(this).removeClass('shake').removeClass('shake-hard');
 			  next();
 			})
 			.queue(function(next) {
-				that.trigger('blended');
+				that.trigger('blended', that.model);
+				that.setModel(new Recipe());
 			  next();
 			})
 
@@ -69,17 +83,11 @@ var RecipeMaker = Backbone.View.extend({
 	remove: function(e) {
 		var recipeLineEl = $(e.currentTarget);
 		var id = recipeLineEl.attr('data-id');
-		var entry = this.model.getEntryById(id);
-		entry.quantity--;
-		this.model.clean();
-
-		// needed in case the clean didn't trigger a change
-		// does this cause two renders?
-	  this.model.trigger('change', entry);
+		this.model.removeById(id);
 	},
 
 	render: function() {
-	  return this.$el.empty().append(this.renderTemplate(this.model.toJSON()));
+	  return this.$el.empty().append(this.renderTemplate(this.model.toArray()));
 	}
 
 })

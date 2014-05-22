@@ -7,7 +7,7 @@ script(id='recipe-maker-template' type='text/x-handlebars-template')
 		ul.list-unstyled
 			{{#each ingredients}}
 			li.text-fat 
-				a.recipe-line.deletable(data-id='{{ingredient._id}}') {{pluralize ingredient.name quantity}}
+				a.recipe-line(data-id='{{ingredient._id}}') {{name}}
 			{{/each}}
 		{{else}}
 		.text-fat

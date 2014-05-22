@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var Recipe = mongoose.model('recipe', {
 	name: String,
-	ingredients: []
+	ingredients: [String]
 });
 
 module.exports = Recipe;

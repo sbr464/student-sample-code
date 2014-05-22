@@ -7,9 +7,9 @@ $(function() {
 	availableIngredients.fetch({ reset: true });
 
 	// create the views and set their models
-	window.ingredientsChooser = new IngredientsChooser({ collection: availableIngredients });
-	window.recipeBoxView = new RecipeBoxView({ collection: recipeBox });
-	window.recipeMaker = new RecipeMaker({ model: new Recipe() });
+	ingredientsChooser = new IngredientsChooser({ collection: availableIngredients });
+	recipeBoxView = new RecipeBoxView({ collection: recipeBox });
+	recipeMaker = new RecipeMaker({ model: new Recipe() });
 
 	// set the rendering destination of the three main views
 	ingredientsChooser.setElement($('#ingredients-chooser')[0]);
@@ -28,19 +28,20 @@ $(function() {
 	  recipeMaker.model.add(ingredient);
 	})
 
+	// when you choose a recipe from the recipe box, put it in the recipe maker
+	recipeMaker.listenTo(recipeBoxView, 'select', function(recipe) {
+	  recipeMaker.setModel(recipe);
+	})
+
 	// when a recipe is blended, show the results and ask to save
-	recipeMaker.on('blended', function() {
-		recipeMaker.model.setName();
+	recipeMaker.on('blended', function(recipe) {
+		recipe.setName();
 		var modal = recipeMaker.showBlendedModal();
 		modal.on('save', function(recipe) {
 			recipeBox.add(recipe);
+			recipe.save();
+			recipeBoxView.render();
 		});
 	})
-
-	// set up Handlebars helpers
-
-	// pluralize a string
-	// usage: {{questions.length}} {{pluralize questions.length "Question"}}
-	Handlebars.registerHelper('pluralize', pluralize);
 
 })

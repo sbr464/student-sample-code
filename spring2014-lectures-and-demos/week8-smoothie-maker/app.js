@@ -21,8 +21,15 @@ mongoose.connect('mongodb://localhost/smoothie-maker');
 app.get('/', indexController.view);
 
 // API
-app.get('/recipes', recipesController.list);
-app.get('/ingredients', ingredientsController.list);
+app.post('/recipes', recipesController.create);
+app.get('/recipes', recipesController.read);
+app.put('/recipes', recipesController.update);
+app.delete('/recipes', recipesController.delete);
+
+app.post('/ingredients', ingredientsController.create);
+app.get('/ingredients', ingredientsController.read);
+app.put('/ingredients', ingredientsController.update);
+app.delete('/ingredients', ingredientsController.delete);
 
 // start thes server
 var server = app.listen(6813, function() {
