@@ -9,7 +9,7 @@ var RecipeBlendedModal = Backbone.View.extend({
 	},
 
 	render: function() {
-	  return this.$el.empty().append(this.renderTemplate(this.model.toJSON()));
+	  return this.$el.html(this.renderTemplate(this.model.toJSON()));
 	},
 
 	// just render it at the end of the body and show it

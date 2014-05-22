@@ -1,7 +1,7 @@
 $(function() {
   
   // fetch the data from the server
-	window.recipeBox = new RecipeBox();
+	recipeBox = new RecipeBox();
 	var availableIngredients = new AvailableIngredients();
 	recipeBox.fetch({ reset: true });
 	availableIngredients.fetch({ reset: true });
@@ -12,9 +12,10 @@ $(function() {
 	var recipeMaker = new RecipeMaker({ model: new Recipe() });
 
 	// set the rendering destination of the three main views
-	ingredientsChooser.setElement($('#ingredients-chooser')[0]);
-	recipeBoxView.setElement($('#recipe-box')[0]);
-	recipeMaker.setElement($('#recipe-maker')[0]);
+	// setElement is going to set view.el and view.$el so that our render function knows where to render the Handlebars template
+	ingredientsChooser.setElement($('#ingredients-chooser'));
+	recipeBoxView.setElement($('#recipe-box'));
+	recipeMaker.setElement($('#recipe-maker'));
 
 	// render
 	ingredientsChooser.render();

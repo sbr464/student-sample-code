@@ -87,7 +87,7 @@ var RecipeMaker = Backbone.View.extend({
 	},
 
 	render: function() {
-	  return this.$el.empty().append(this.renderTemplate(this.model.toArray()));
+	  return this.$el.html(this.renderTemplate(this.model.toArray()));
 	}
 
 })

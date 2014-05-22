@@ -17,7 +17,7 @@ var RecipeBoxView = Backbone.View.extend({
 	},
 
 	render: function() {
-	  this.$el.empty().append(this.renderTemplate(this.collection.toArray()));
+	  this.$el.html(this.renderTemplate(this.collection.toArray()));
 	}
 
 })

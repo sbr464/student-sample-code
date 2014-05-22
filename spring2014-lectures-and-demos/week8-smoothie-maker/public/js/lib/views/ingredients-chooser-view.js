@@ -11,7 +11,7 @@ var IngredientsChooser = Backbone.View.extend({
 	},
 
 	render: function() {
-	  this.$el.empty().append(this.renderTemplate(this.collection.toJSON()));
+	  this.$el.html(this.renderTemplate(this.collection.toJSON()));
 	},
 
 	choose: function(e) {
