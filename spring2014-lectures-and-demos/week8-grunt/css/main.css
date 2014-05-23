@@ -1,0 +1,9 @@
+body {
+	font-size: 12px;
+	margin: 20px;
+}
+
+.special-layout {
+	width: 50%;
+	border: 1px solid yellow;
+}
