@@ -1,0 +1,17 @@
+.blue { background-color: blue; }
+.green { background-color: green; }
+.red { background-color: red; }
+
+.blue, .green, .red {
+	display: inline-block;
+	border: solid 1px black;
+}
+
+.container {
+	padding: 20px;
+}
+
+.blue, .red {
+	width: 100px;
+	height: 100px;
+}
