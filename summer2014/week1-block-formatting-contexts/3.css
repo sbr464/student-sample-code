@@ -1,0 +1,11 @@
+.container {
+	padding: 20px;
+
+	/* Uncomment this line to turn blue into a block formatting context. */
+	/* overflow: hidden */;
+}
+
+.pizza {
+	float: left;
+	margin-right: 20px;
+}

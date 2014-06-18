@@ -1,0 +1,20 @@
+.red, .green {
+	float: left;
+	width: 200px;
+	height: 200px;
+	margin-right: 20px;
+}
+
+.blue {
+	height: 50px;
+
+	/* Uncomment this line to show failed attempts. */
+	/* display: inline-block; */
+	/* float: left; */
+
+	/* This solves the problem... but is too tightly coupled to the size of the blocks! */
+	/* margin-left: 440px; */
+
+	/* Uncomment this line to turn blue into a block formatting context so that the content touches the left edge of the element. */
+	/* overflow: hidden */;
+}

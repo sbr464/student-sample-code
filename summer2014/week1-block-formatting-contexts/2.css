@@ -1,0 +1,14 @@
+.blue {
+	/* Uncomment this line to show failed attempts. */
+	/* display: inline-block; */
+	/* float: left; */
+
+	/* Uncomment this line to turn blue into a block formatting context. */
+	/* overflow: hidden */;
+}
+
+.red, .green {
+	width: 200px;
+	height: 200px;
+	margin: 50px;
+}
