@@ -1,0 +1,38 @@
+.container {
+	width: 500px;
+	height: 500px;
+	margin: 20px;
+	background-color: skyblue;
+}
+
+.box {
+	width: 100px;
+	height: 100px;
+	background-color: wheat;
+}
+
+.inline-horizontal {
+	text-align: center;
+}
+
+.inline-vertical {
+	line-height: 500px;
+}
+.inline-vertical > * {
+	vertical-align: middle;
+}
+
+/* 1. centers one element per line */
+/* 2. container must have larger width */
+.block-horizontal > * {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.block-vertical {
+	display: table;
+}
+.block-vertical-inner {
+	display: table-cell;
+	vertical-align: middle;
+}
