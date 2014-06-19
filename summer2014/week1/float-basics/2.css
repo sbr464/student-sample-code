@@ -1,0 +1,23 @@
+.box {
+	width: 100px;
+	height: 100px;
+}
+
+.red {
+	background-color: firebrick;
+}
+
+.blue {
+	background-color: cornflowerblue;
+}
+
+.green {
+	background-color: palegreen;
+	width: 30%;
+	float: left;
+	margin-right: 5%;
+}
+
+.green:last-child {
+	margin-right: 0;
+}

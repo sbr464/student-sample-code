@@ -1,0 +1,15 @@
+.box {
+	width: 100px;
+	height: 100px;
+}
+
+.red {
+	background-color: firebrick;
+	float: left;
+	margin-right: 10px;
+}
+
+.blue {
+	background-color: cornflowerblue;
+	float: right;
+}
