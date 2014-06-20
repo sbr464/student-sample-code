@@ -1,0 +1,57 @@
+img {
+	max-width: 100%;
+}
+
+body {
+	background: url(cat.jpg);
+	font-size: 12px;
+}
+
+.block {
+	background: #F00;
+	font-size: 1em;
+}
+
+.block-alt {
+	background: #00F;
+}
+
+html.borderradius .block {
+	border-radius: 10px;
+}
+
+/* min-width: pixel amount and up */
+/* max-width: pixel amount and lower */
+@media screen and (min-width: 100px){
+	/* 
+		Apply these rulesets only if the 
+		above media query is satisfied
+	*/
+	.block {
+		width: 50%;
+		float: left;
+	}
+
+	.block-alt {
+		background: #0F0;
+	}
+}
+
+@media screen and (min-width: 200px){
+	body {
+		font-size: 24px;
+	}
+	.block-alt {
+		background: #F0F;
+	}
+}
+
+
+@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+	body {
+		/*background: url(cat@2x.jpg);*/
+    background-size: 100% 100%;
+	}
+}
+
+

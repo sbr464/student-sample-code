@@ -1,0 +1,6 @@
+.my-class {
+  color: yellow;
+}
+.my-class:hover {
+  color: white;
+}

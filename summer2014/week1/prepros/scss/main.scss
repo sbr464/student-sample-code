@@ -1,0 +1,9 @@
+$base-color: yellow;
+
+.my-class {
+	color: $base-color;
+	
+	&:hover {
+		color: lighten($base-color, 50%);
+	}
+}
