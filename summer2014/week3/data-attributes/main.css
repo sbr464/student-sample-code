@@ -7,6 +7,7 @@
 	width: 30px;
 	height: 30px;
 	border-bottom: solid 1px black;
+	text-align: center;
 }
 
 /* right border on first column */
@@ -17,4 +18,15 @@
 /* remove bottom border on last row */
 .parking-lot tr:last-child td {
 	border-bottom: none;
+}
+
+.swatch {
+	width: 5px;
+	height: 5px;
+	display: inline-block;
+	margin-right: 2px;
+}
+
+.swatch:last-of-type {
+	margin-right: 0;
 }
