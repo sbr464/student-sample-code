@@ -1,0 +1,50 @@
+html, body {
+	height: 100%;
+}
+
+.sky {
+	height: 75%;
+	position: relative;
+	text-align: center;
+}
+
+.earth {
+	height: 25%;
+	background-color: black;
+}
+
+#moon {
+	position: absolute;
+}
+
+.penguin {
+	position: absolute;
+	bottom: 0;
+}
+
+.bird {
+	position: absolute;
+	transition: top 1s;
+}
+
+.sick {
+	color: darkgreen;
+	-webkit-transform: rotateZ(-20deg);
+}
+
+.dead {
+	color: darkgreen;
+	-webkit-transform: rotateZ(180deg);
+}
+
+.flock {
+	display: inline-block;
+	position: absolute;
+	height: 50px;
+}
+
+#start {
+	position: absolute;
+	bottom: 0;
+	z-index: 10;
+}
