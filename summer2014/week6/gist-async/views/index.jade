@@ -1,0 +1,21 @@
+extends layout
+
+block content
+	h1 Raine's Gists
+	for gist in gists
+		h2= gist.description
+		
+		//- for file in gist.files
+		//- 	//- h3= filename
+		//- 	pre
+		//- 		code= file.content
+
+		//- for filename in Object.keys(gist.files)
+		//- 	h3= filename
+		//- 	pre
+		//- 		code= gist.files[filename].content
+
+		for file, filename in gist.files
+			h3= filename
+			pre
+				code= file.content
