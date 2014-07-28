@@ -24,9 +24,35 @@ app.post('/signup', function(req, res) {
 
 	// save the user to the database
 	// (instance method)
-	user.save();
+	user.save(function(error, result) {
+		if(error) {
+			res.send(500, 'ERROR')
+		}
+		else {
+			res.render('thankyou', {
+				'newUser': user
+			});
+		}
+	});
 
-	res.send('You have signed up for Wingzingly!');
+})
+
+app.post('/update', function(req, res) {
+
+	// User.findOne + user.email=newemail + user.save
+	User.findByIdAndUpdate(req.body.id, { 'email': req.body.email }, function(error, results) {
+
+		if(error) {
+			res.send(500, 'There was an error');
+		}
+		else {
+			res.send('You have successfully changed your email');
+		}
+
+	})
+
+	// the database will not be updated at this point!
+
 })
 
 app.get('/viewusers', function(req, res) {

@@ -1,0 +1,9 @@
+extend layout.jade
+
+block content
+	h1 You have signed up for Wingzingly!
+	p Would you like to change your email?
+	form(method='post' action='/update')
+		input(type='text' name='email' value=newUser.email)
+		input(type='hidden' name='id' value=newUser._id)
+		input(type='submit')
