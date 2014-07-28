@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  //- Render the title and description
+  //- value pulled from our "render" call
+  h1= title
+  p= description
+
+  //- Construct an anchor tag that navigates
+  //- to /view/0 or /view/1, etc
+  a(href='/view/#{nextIndex}') Next
