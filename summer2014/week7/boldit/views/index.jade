@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	.container
+		h1 BOLDIT
+
+		form#submitForm
+			.form-group
+				input.form-control(name='url' placeholder='http://')
+			.form-group
+				input.btn.btn-primary(type='submit' value='Add Link')
+
+		ul#links.list-unstyled
+
+block scripts
+	script.
+		var links = JSON.parse('!{JSON.stringify(links)}');
+	script(src='/scripts/index.js')
