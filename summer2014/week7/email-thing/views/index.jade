@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1 Email Thing
+
+  form#new-message
+    .form-group
+      input#target-user(type="text", placeholder="User")
+    .form-group
+      input#target-subject(type="text", placeholder="Subject")
+    .form-group
+      textarea#target-message(placeholder="Message...")
+    .form-group
+      input.btn.btn-primary(type="submit", value="Send Message")
+  
+  //- Line separator (horizontal rule)
+  hr
+
+  h1 Get Messages
+
+  form#get-messages
+    input#request-user(type="text", placeholder="Username")
+    input(type="submit", value="Get Messages")
+
+  //- placeholder storage for the Messages
+  ul#message-list
