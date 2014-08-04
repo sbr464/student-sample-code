@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+</head>
+<body>
+	
+	<!-- Placeholder for our list of games -->
+	<ul id="games-list"></ul>
+	<div id="games-list-helper"></div>
+
+	<!-- Templates: -->
+	<script id="my-template" type="text/x-handlebars-template">
+		<h1>{{ title }}</h1>
+		<p>{{ message }}</p>
+	</script>
+
+	<script id="item-template" type="text/x-handlebars-template">
+		<li>
+			<strong>{{title}}</strong> - {{platform}}
+		</li>
+	</script>
+	
+	<!-- Use the handlebars "each" helper to perform the loop -->
+	<script id="helper-template" type="text/x-handlebars-template">
+		<ul>
+			{{#each games}}
+				<li>
+					{{title}} - {{platform}}
+
+					{{#if price}}
+						<em>{{price}}</em>
+					{{else}}
+						<em>No price set</em>
+					{{/if}}
+
+				</li>
+			{{/each}}
+		</ul>
+	</script>
+
+
+	
+	<!-- Use jQuery -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+	<!-- Handlebars JS from CDN -->
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.4/handlebars.min.js"></script>
+
+	<!-- Our script -->
+	<script src="main.js"></script>
+
+</body>
+</html>
