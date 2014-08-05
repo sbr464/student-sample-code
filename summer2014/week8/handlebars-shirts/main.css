@@ -1,0 +1,20 @@
+.container-narrow {
+	margin: 0 auto;
+}
+
+.shirt {
+	font-size: 100px;
+}
+
+.shirt-container {
+	position: relative;
+	text-align: center;
+	display: inline-block;
+}
+
+.shirt-text {
+	position: absolute;
+	width: 100%;
+	top: 60px;
+	font-size: 25px;
+}
