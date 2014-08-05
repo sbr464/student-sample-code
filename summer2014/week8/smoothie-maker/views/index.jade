@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	.row
+		.col-sm-3.col-sm-push-9.theme-dark.toolbox
+			#recipe-box
+		.col-sm-3.col-sm-pull-3.theme-light.text-center.toolbox
+			#ingredients-chooser
+		.col-sm-6.col-sm-pull-3.text-center.toolbox
+			#recipe-maker
+
+block scripts
+	script(src='/js/lib/main.js')

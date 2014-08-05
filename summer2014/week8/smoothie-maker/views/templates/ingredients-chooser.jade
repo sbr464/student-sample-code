@@ -1,0 +1,7 @@
+script(id='ingredients-chooser-template' type='text/x-handlebars-template')
+	ul.list-unstyled.space-md
+		| {{#each this}}
+		li
+			a.ingredient.mini-zoom.space-md(data-id='{{_id}}')
+				img(src='/images/foodie/{{image}}')
+		| {{/each}}

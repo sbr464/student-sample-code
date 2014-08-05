@@ -1,0 +1,8 @@
+{ name: 'Banana', image: 'banana.png' }
+{ name: 'Carrot', image: 'carrot.png' }
+{ name: 'Cherry', image: 'cherries.png' }
+{ name: 'Peach', image: 'peach.png' }
+{ name: 'Pear', image: 'pear.png' }
+{ name: 'Pineapple', image: 'pineapple.png' }
+{ name: 'Strawberry', image: 'strawberry.png' }
+{ name: 'Watermelon', image: 'watermelon.png' }
