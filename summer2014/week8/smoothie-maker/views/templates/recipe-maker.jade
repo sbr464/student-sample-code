@@ -1,0 +1,19 @@
+script(id='recipe-maker-template' type='text/x-handlebars-template')
+	.space-lg
+
+		{{#if ingredients.length}}
+		ul.list-unstyled
+			{{#each ingredients}}
+			li.text-fat 
+				a.recipe-line(data-id='{{_id}}') {{name}}
+			{{/each}}
+		{{else}}
+		.text-fat
+			span.hidden-xs ← 
+			| Choose Ingredients
+		{{/if}}
+
+		.pull-down
+			a.blend.overlay.circle.border(class='{{#unless ingredients.length}}disabled{{/unless}}')
+				img(src='/images/foodie/blender.png')
+

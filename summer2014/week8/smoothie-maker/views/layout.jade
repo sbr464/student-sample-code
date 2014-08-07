@@ -1,0 +1,45 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset="utf-8")
+		title Smoothie Maker
+
+		//- vendor cdns
+		link(rel='stylesheet' type='text/css' href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css')
+		//- https://github.com/elrumordelaluz/csshake
+		link(rel='stylesheet' type='text/css' href='//cdn.rawgit.com/elrumordelaluz/csshake/44efe8f94af8a8d6d6ea94acd0915e650aba6ca3/csshake.css')
+
+		//- app
+		link(rel='stylesheet' type='text/css' href='/styles/lib/main.css')
+
+	body
+		block content
+
+		//- include handlebars templates
+		include templates/ingredients-chooser
+		include templates/recipe-box
+		include templates/recipe-maker
+		include templates/recipe-blended-modal
+
+		//- vendor cdns
+		script(src='//code.jquery.com/jquery-2.1.1.min.js')
+		script(src='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js')
+		script(src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js')
+		script(src='//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js')
+		script(src='//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.4/handlebars.min.js')
+
+		//- models
+		script(src='/js/lib/models/ingredient-model.js')
+		script(src='/js/lib/models/recipe-model.js')
+
+		//- collections
+		script(src='/js/lib/collections/available-ingredients-collection.js')
+		script(src='/js/lib/collections/recipe-box-collection.js')
+
+		//- views
+		script(src='/js/lib/views/ingredients-chooser-view.js')
+		script(src='/js/lib/views/recipe-box-view.js')
+		script(src='/js/lib/views/recipe-maker-view.js')
+		script(src='/js/lib/views/recipe-blended-modal-view.js')
+
+		block scripts

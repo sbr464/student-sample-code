@@ -1,0 +1,7 @@
+script(id='recipe-box-template' type='text/x-handlebars-template')
+	h1.space-xl.text-center Recipe Box
+	ul.list-unstyled.indent
+		{{#each this}}
+		li
+			a.recipe(data-id='{{_id}}') {{name}}
+		{{/each}}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Pastry Shop</title>
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<body>
+
+	<div class="container">
+		<div class="text-center">
+			<img src="images/logo.jpg">
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-8">
+				<div id="storefront"></div>
+			</div>
+			<div class="col-md-4">
+				<div id="shopping-cart"></div>
+			</div>
+		</div>
+	</div>
+
+	
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+
+  <script src="scripts/models/order-model.js"></script>
+  <script src="scripts/models/pastry-model.js"></script>
+  <script src="scripts/views/pastry-view.js"></script>
+  <script src="scripts/views/order-view.js"></script>
+  <script src="scripts/db.js"></script>
+  <script src="scripts/main.js"></script>
+
+</body>
+</html>
