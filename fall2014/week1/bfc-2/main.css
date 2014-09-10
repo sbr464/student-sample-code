@@ -1,0 +1,29 @@
+
+.col-1 {
+	background: #F00;
+	width: 150px;
+	float: left;
+}
+
+.col-2 {
+	background: #0F0;
+	overflow: hidden;
+}
+
+.col-3 {
+	width:150px;
+	float: right;
+}
+
+.mar-1 {
+	margin-bottom: 10px;
+}
+
+.mar-2 {
+	margin-top: 10px;
+}
+
+.contain {
+	overflow: hidden;
+	padding: 10px;
+}

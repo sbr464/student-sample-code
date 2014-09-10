@@ -1,0 +1,34 @@
+.rel {
+	background: #F00;
+	margin: 50px;
+	position: relative;
+}
+
+.rel-inner {
+	position: relative;
+	top: -10px;
+	left: -10px;
+}
+
+.abs {
+	background: #0F0;
+	position: absolute;
+	top: 10px;
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
+}
+
+.fix {
+	background: rgba(0,0,0,0.75);
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	right: 20px;
+	bottom: 20px;
+}
+
+
+
+
+
