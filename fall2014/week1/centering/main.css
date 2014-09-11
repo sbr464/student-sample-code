@@ -1,0 +1,197 @@
+/*
+	HORIZONTAL:
+		Margin auto:
+			- needs width
+	    - display block
+			- margin: auto
+*/
+.margin-center {
+	background: #F00;
+	width: 500px;
+	
+	/* Applies to all sides */
+	margin: auto;
+	/* margin: 0 auto; */
+	/* margin: 0 auto 0 auto */
+}
+
+/*
+	HORIZONTAL:
+		Inline center:
+			- inline or inline block (content)
+*/
+.inline-center {
+	background: #0F0;
+	text-align: center;
+}
+
+/*
+	Children that are inline or inline-block
+*/
+.item {
+	display: inline-block;
+	width: 100px;
+	/* override text centering at the child level */
+	text-align: left;
+}
+
+/*
+	VERTICAL:
+		Line Height:
+			- only works with single line of items
+ */
+.line-height {
+	background: #00F;
+	line-height: 200px;
+}
+
+/*
+	VERTICAL:
+		Table:
+			- Forces browser to treat
+	    	content like a table/table cell
+			- Needs parent with display: table
+			- Needs child with display: table-cell
+ */
+.table-outer {
+	background: #F00;
+	display: table;
+	height: 200px;
+}
+.table-inner {
+	background: #0F0;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+
+/*
+	VERTICAL:
+		CSS3 Transforms:
+			- Browser support = not so great
+ */
+.css3-outer {
+	background: #00F;
+	height: 200px;
+	position: relative;
+}
+
+.css3-inner {
+	background: #F0F;
+	position: absolute;
+	top: 50%;
+	
+	/* pull content up by half its size */
+	transform: translateY(-50%);
+}
+
+
+/*
+	BOTH:
+		Absolute Stretching:
+			- Won't scale to content, but to container
+ */
+.stretch-outer {
+	background: #000;
+	height: 200px;
+	position: relative;
+}
+
+.stretch-inner {
+	background: #999;
+	position: absolute;
+	/* Force browser to stretch this out vertically */
+	top: 10px;
+	bottom: 10px;
+	
+	/* Force browser to stretch this out horizontally */
+	left: 10px;
+	right: 10px;
+}
+
+/* Handle the stretching with a given size */
+.stretch-inner-sized {
+	background: #999;
+	position: absolute;
+	
+	/* Stretch the sides out */
+	top: 10px;
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
+	
+	/* Force size */
+	height: 50px;
+	width: 200px;
+	
+	/* Let browser calculate all necessary margins */
+	margin: auto;
+	
+	/* Hide any extra content with scroll-bar */
+	overflow: auto;
+}
+
+
+
+/*
+	BOTH:
+		Padding:
+			- Fit to content
+	    - Parent gets higher padding values
+ */
+.padding-outer {
+	background: #333;
+	
+	/* Pull the contents in by this amount */
+	padding: 60px;
+}
+.padding-inner {
+	background: #EEE;
+}
+
+
+/*
+	BOTH:
+		Absolute with Negative Margins:
+			- Fixed sizes
+	    - Needs math
+ */
+.neg-outer {
+	background: #00F;
+	height: 200px;
+	position: relative;
+}
+
+.neg-inner {
+	background: #F00;
+	
+	/* Set a size to help calculations */
+	height: 50px;
+	width: 300px;
+	
+	position: absolute;
+	
+	/* Center the top-left of the contents */
+	top: 50%;
+	left: 50%;
+	
+	/* Pull away from awkward alignment... */
+	
+	/* width / 2 * -1 */
+	margin-left: -150px;
+	
+	/* height / 2 * -1 */
+	margin-top: -25px;
+	
+	/* Allow scroll bars for content */
+	overflow: auto;
+}
+
+
+
+
+
+
+
+
+
