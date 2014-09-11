@@ -1,0 +1,99 @@
+/*
+	Example 1:
+		Using clear in the middle of
+		a set of floated items
+		while the container is forced
+		to "contain" the floats and margins.
+ */
+.container {
+	background: #F00;
+	overflow: hidden;
+}
+
+.item {
+	float: left;
+	margin: 10px;
+}
+
+.clearit {
+	clear: left;
+}
+
+/*
+	Separate contents
+		"hr" stands for horizontal rule
+		and is a quick way to add a single
+		line to separate content.
+*/
+hr {
+	display: block;
+	clear: both;
+	margin: 20px 0;
+}
+
+
+/*
+	Example 2: Clearfixes (a hack)
+ */
+.just-background {
+	background: #0F0;
+}
+
+/* 
+	MicroClearfix Hack:
+	http://nicolasgallagher.com/micro-clearfix-hack/
+*/
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+
+/*
+	Example 3:
+		Before and After pseudo selectors
+*/
+
+.before-el:before {
+	/* Content is required to make this show up */
+	content: "This content isn't real";
+	border-bottom: 1px solid black;
+	display: block;
+}
+
+.stacked {
+	width: 300px;
+	border: 1px solid black;
+	padding: 10px;
+	position: relative;
+}
+.stacked:after {
+	content: " ";
+	display: block;
+	width: 80%;
+	height: 5px;
+	border: 1px solid black;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -40%;
+}
+.stacked:before {
+	content: " ";
+	display: block;
+	width: 60%;
+	height: 5px;
+	border: 1px solid black;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -30%;
+	margin-top: 6px;
+}
+
+
+
