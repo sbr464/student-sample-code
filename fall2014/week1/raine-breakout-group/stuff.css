@@ -1,0 +1,145 @@
+/*
+CSS Best Practices
+	Specific & Reusable
+	Avoid location-based selectors and names
+	Embrace multiple classes
+*/
+
+
+/* Overriding a "default" class */
+.button {
+	padding: 5px 3px;
+	border-radius: 5px;
+	background-color: papayawhip;
+	color: firebrick;
+}
+
+.button-main {
+	padding: 10px 5px;
+	color: orange;
+}
+
+/* <a class="button button-main"> */
+
+
+
+/* */
+
+/* #1 */
+.news-box {
+	border-radius: 10px;
+	padding: 10px;
+	line-height: 1.2;
+	background-color: yellow;
+	border: solid 1px black;
+}
+
+/* #2: Better */;
+.content-box {
+	border-radius: 10px;
+	padding: 10px;
+	line-height: 1.2;
+}
+
+.highlight {
+	background-color: yellow;
+	border: solid 1px black;
+}
+
+/*
+<div class="content-box"></div>
+<div class="content-box highlight"></div>
+*/
+
+/* select all elements with BOTH class "button" and "large" (i.e. "button large" or "large button") */
+.button.large {
+	padding: 20px;
+}
+/* <a class="button large"> */
+
+/* NOT the same as... */
+.button .large {}
+/* <a class="button"><span class="large">Hi</span> Steven</a> */
+
+input[type='text'].large {
+	font-size: 15px;
+}
+
+/* style all links to secure sites */
+/* this is the "starts with" attribute selector" */
+a[href^='https'] {
+}
+
+/* this is the "contains" attribute selector" */
+a[href*='sex'] {
+	display: none;
+}
+
+
+/* Organization  */
+
+/* 1. Global Defaults */
+p {
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5 {
+	font-weight: normal;
+}
+
+/* 2. Helper Classes (very generic classes... use sparingly) */
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+
+.left { float: left; }
+.right { float: right; }
+
+.error { color: red; }
+
+/* 3. Components */
+.content-box { ... }
+.button { ... }
+
+/* 4. Page-Specific */
+.home-banner { ... }
+
+
+
+
+/* Style the first and last elements with classes */
+.item-list .first {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.item-list .last {
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+/* combined selectors (no space- elements must have both)
+li:first-child
+li.test
+li[attr='something']
+*/
+
+/* Style the first and last elements based on their location */
+/* This is the preferred solution in this case, because the style IS based on the location (not a coincidence) */
+.item-list > :first-child {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.item-list > :last-child {
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+/*
+<ul class="item-list">
+	<li>CSS</li>
+	<li>Javascript</li>
+	<li>Ruby</li>
+	<li>C#</li>
+</ul>
+*/
