@@ -1,0 +1,51 @@
+/* NOTE: 
+	This is not using a mobile-first approach. That would mean
+	targetting the small devices first and would use a lot of 100%
+	items since you want to make best use of the small space provided.
+*/
+
+/* Base container styles. MediaQueries will override this later */
+.container {
+	background: #999;
+	width: 500px;
+	margin: auto;
+}
+
+/* Using ems to define a dynamic font size */
+.header-small {
+	font-size: 0.5em;
+	
+	/*
+		REMs will be relative to the font-size specified on the html element
+		font-size: 0.5rem;
+	*/
+}
+
+/* Border Radius support, making use of the Modernizr detection */
+html.borderradius .container {
+	border-radius: 10px;
+}
+
+/*
+	This media query applies to all screen devices with a width of less than 500px
+	and a width of greater than 300px.
+ */
+@media screen and (max-width: 500px) and (min-width: 300px){
+	/*
+		Override the default container styles.
+		CSS Specificity applies here as well, though the
+		media query declaration itself does not add to the weight.
+	*/
+	.container {
+		background: #333;
+		color: #FFF;
+		width: 300px;
+	}
+}
+
+/* Another media query with different conditions */
+@media screen and (max-width: 450px) and (min-width: 400px) {
+	.container {
+		color: #F0F;
+	}
+}

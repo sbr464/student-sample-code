@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <meta charset="utf-8">
+
+	  <!-- Tell the browser how to render and scale our page/site -->
+	  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width">
+
+	  <title>Responsive Web Design</title>
+	  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+	  <link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	<body>
+		
+		<!-- Our root container -->
+		<div class="container">
+			<h1>
+				Here is the
+				<!-- A special class that is relative font-size to its parent -->
+				<span class="header-small">title</span>
+			</h1>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nobis voluptate alias quaerat sed deserunt perferendis! Hic fuga laboriosam inventore reprehenderit labore ipsa, modi ab, cupiditate, praesentium at ea, nesciunt!
+
+		</div>
+		
+		<!-- 
+			Pull in a custom modernizr script from
+			http://modernizr.com/download/
+			This library allows you to perform feature detection
+			to support progressive enhancement of the site.
+			If you want to support borderradius, but have a different
+			fallback for browsers that don't, this makes it easier
+			to visualize this in your CSS.
+		-->
+		<script src="modernizr.js"></script>
+	</body>
+</html>
