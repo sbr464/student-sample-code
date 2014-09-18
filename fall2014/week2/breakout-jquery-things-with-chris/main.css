@@ -1,0 +1,31 @@
+/* 
+	Style to be added via JS.
+	This helps with separation of concerns
+	by keeping our css and js apart.
+*/
+.list-item-alt {
+	color: red;
+	text-decoration: underline;
+}
+
+/*
+This is the attribute selector. This particular
+comparison will check to see if the
+href attribute on an anchor tag starts with the / character.
+If it does start with forward slash, the link will be red.
+ */
+a[href^='/'] {
+	color: red;
+}
+
+/*
+	The "after" pseudo selector creates dynamic content for the
+	page. It's fake content though, so best to not use actual text.
+	NOTE: If content is an empty string (""), it will not be displayed.
+					At least set it to a " " character.
+ */
+.tester:after {
+	content: "this comes after the text!!!";
+	display: block;
+	border-bottom: 1px solid black;
+}
