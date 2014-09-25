@@ -52,12 +52,10 @@ for(var key in event) {
 	}
 }
 
+// write an algorithm that converts an array of celsius temperatures to an array of fahrenheit temperatures
 var celsiusTemps = [20, 23, 22, 14, 16, 20];
 
 var celsiusToFahrenheit = function(c) {
-	// if(arguments.length !== 1) {
-
-	// }
 	return c * 9 / 5 + 32;
 };
 
@@ -82,8 +80,10 @@ var mappingConversion = function(inputArray, conversionFunction) {
 	return outputArray;
 }
 
-
+// now we can do what we did above with just one line of code, since the looping logic has been abstracted out
 var fahrenheitTemps = mappingConversion(celsiusTemps, celsiusToFahrenheit);
+
+// as it turns out, mappingConversion is just an implementation of the built-in 'map' function which is available on all arrays:
 var fahrenheitTemps = celsiusTemps.map(celsiusToFahrenheit);
 
 
