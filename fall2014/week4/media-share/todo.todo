@@ -1,0 +1,16 @@
+Phase 1:
+ ☐ Specify the type of media item for better class association
+ ☐ Remove media items from a library via button
+ ☐ Share items between libraries via button
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✔ Add new media items to the library via form @done (14-09-30 10:26) @project(Phase 1)
+ ✔ Add form to media libraries @done (14-09-30 10:05) @project(Phase 1)
+ ✔ Add method for "Adding" new items @done (14-09-30 09:54) @project(Phase 1)
+ ✔ Render library into DOM @done (14-09-30 09:36) @project(Phase 1)
+ ✔ Movies extending Media @done (14-09-30 09:24) @project(Phase 1)
+ ✔ Games extending Media @done (14-09-30 09:24) @project(Phase 1)
+ ✘ Audio extending Media @cancelled (14-09-30 09:13) @project(Phase 1)
+ ✔ Base Media item class @done (14-09-30 09:13) @project(Phase 1)
+ ✔ Have multiple Media libraries @done (14-09-30 09:08) @project(Phase 1)
