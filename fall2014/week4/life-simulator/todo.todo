@@ -1,0 +1,14 @@
+Life Simulator:
+ ☐ Display buildings and their people
+
+Future:
+ ☐ Ability to transfer multiple people with the same name
+ ☐ Add position to buildings
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✔ Clicking on a person will print out their name (or the full object) @done (14-10-01 10:45) @project(Life Simulator)
+ ✔ Buildings can share people @done (14-10-01 10:01) @project(Life Simulator)
+ ✔ Attach a person to a building @done (14-10-01 09:31) @project(Life Simulator)
+ ✔ Building class @done (14-10-01 09:26) @project(Life Simulator)
+ ✔ Person class @done (14-10-01 09:21) @project(Life Simulator)
