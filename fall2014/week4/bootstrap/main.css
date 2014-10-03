@@ -1,0 +1,9 @@
+/*
+	Need to support dynamically adjusting
+	inputs inside an inline form so that
+	they fill (or shrink) to the column
+	containers they exist inside of
+ */
+.form-inline .form-control {
+	width: 100%;
+}
