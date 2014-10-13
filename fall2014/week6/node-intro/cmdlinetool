@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+// The above line will allow you to run this file
+// using "./cmdlinetool" which will let Bash
+// try to execute this file. When it encounters the
+// above line, it will know to use the Node environment
+// to actually execute this code.
+
+console.log('This was run via node');
