@@ -1,0 +1,65 @@
+//- This template "extends" from the layout file.
+	This means it will use that template to define
+	a core layout with blocks it can then fill in.
+extends layout
+
+//- Set a drop-in value for the content block in layout
+block content
+	//- This is variable syntax 1:
+		In a string, you can use #{variable} to access and
+		use a variable from the render function.
+	h1 Hello #{title}
+	
+	//- Variable syntax 2:
+		When the entire content of an element or attribute
+		will be the content of the variable, you can short-hand
+		this to just the =.
+	h3= title
+
+	//- Here we are using the different variable syntaxes
+		to set attribute values too
+	div(id=title, data-title=title, data-special-title="my title is #{title}") This div has a data attribute
+	
+	//- Create a link to the about page on our site
+	a(href="/about") About page
+	.something(class=title)
+		ul
+			li
+				a(href="http://google.com") Google.com
+			//- Most of the inheriting is done by "nesting",
+				which is to move to the next line and increase
+				the indent level by 1. In this case, because there
+				is only one child of the element, it's sort of
+				redundant (as seen right above) to have them on two lines.
+				We can use the : character to tell jade that the following
+				is a child element.
+			li: a(href="http://refactoru.com") RefactorU
+	ul
+		//- For loops in our HTML WHAT.
+			This will loop through the libraries variable sent to this
+			from our "render" function, we can loop through each item
+			and generate an LI on the fly.
+		for library in libraries
+			li My favorite library is #{library}
+
+block footer
+	//- Set an ID and class on this h3
+	h3#the-h3.my-class This is the footer
+
+	//- If our content needs to extend to multiple lines,
+		One way to make that work is to use the "|" indented inside
+		the main element. If you want to have dom elements within the
+		extended content, just write it as raw html
+	p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+		| Ipsam atque aperiam corporis, recusandae eum corrupti error
+		| unde fugiat <em>repudiandae</em> tempora laboriosam accusantium aut
+		| nobis nostrum quam tenetur natus, minima tempore!
+
+	//- The "." right after an element's definition means that
+		all content contained below is considered to be textual.
+		You won't be able to "switch" back to jade so all indented
+		content is considered raw.
+	p.
+		This is
+		all <strong>text</strong>
+		contained in a P

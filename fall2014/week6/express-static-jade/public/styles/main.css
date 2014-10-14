@@ -1,0 +1,10 @@
+/*
+	This is a CSS file stored in public/styles
+	and can be referenced by skipping the public
+	name and going straight to /styles/main.css
+	as seen inside our views/layout.jade
+ */
+body {
+	background-color: #F00;
+	color: #00F;
+}
