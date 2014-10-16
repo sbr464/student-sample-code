@@ -1,0 +1,8 @@
+extends layout
+
+block content
+	h1 My Recipe Box
+
+	ul
+		for recipe in recipeBox.recipes
+			li: a(href='/view/#{recipe.title}')= recipe.title
