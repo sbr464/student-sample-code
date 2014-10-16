@@ -5,3 +5,6 @@ block content
 
 	h1= recipe.title
 	p= recipe.description
+
+	//- able to delete a recipe
+	p: a(href="/delete/#{recipe.title}") Delete this recipe

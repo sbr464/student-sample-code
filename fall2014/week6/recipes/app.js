@@ -16,6 +16,12 @@ app.get('/', indexController.index);
 // them both be handled by the same controller method
 app.get('/view/:recipeTitle', indexController.view);
 
+// Create a route to handle adding new recipes
+app.post('/addRecipe', indexController.addRecipe);
+
+// Route for handling deletion of recipes
+app.get('/delete/:recipeTitle', indexController.deleteRecipe);
+
 var server = app.listen(8837, function() {
 	console.log('Express server listening on port ' + server.address().port);
 });

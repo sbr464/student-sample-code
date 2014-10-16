@@ -3,6 +3,11 @@ extends layout
 block content
 	h1 My Recipe Box
 
+	form(method="post", action="/addRecipe")
+		input(type="text", name="title", placeholder="Title")
+		input(type="text", name="description", placeholder="Description")
+		input(type="submit")
+
 	ul
 		for recipe in recipeBox.recipes
 			li: a(href='/view/#{recipe.title}')= recipe.title
