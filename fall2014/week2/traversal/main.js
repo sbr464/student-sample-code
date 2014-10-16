@@ -32,12 +32,12 @@ $(document).on('ready', function() {
   	/*
   		THIS IS BETTER BECAUSE IT DOESN'T RELY ON A SPECIFIC HIERARCHY...
   	 */
-  		
+
   	// Go up the parent list until we match an element that has a class of "product"
   	console.log('Closest .product:', $(this).closest('.product') );
 
   	// Find the closest unique .product, then grab the h1
-		console.log('Closest .product:', $(this).closest('.product').find('h1') );
+	console.log('Closest .product h1:', $(this).closest('.product').find('h1') );
 
 		// Separate the results since they are long
   	console.log('--------------------------------------------------');
@@ -52,7 +52,7 @@ $(document).on('ready', function() {
 		var price = product.find('.price').text();
 		console.log('PRODUCT:', title, price);
   });
-	
+
 	console.log('This from outside event handler:', this);
 
 	// jQuery EACH method:
