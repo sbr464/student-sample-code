@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	h1 Hello Boulder!
+
+	//- We'll listen for clicks to add ne numbers
+	button#update-numbers Get New Number
+
+	button#update-numbers-five Get 5 New Numbers
+
+	p
+		input#custom-count(type="text", placeholder="Custom count")
+		button#update-numbers-custom Get Custom Numbers
+
+	//- Where to stick the list of numbers
+	ul#numbers
