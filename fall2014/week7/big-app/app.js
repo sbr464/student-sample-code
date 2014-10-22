@@ -1,0 +1,34 @@
+var express = require('express');
+var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+
+// Load in both of our controllers
+var indexController = require('./controllers/index.js');
+var apiController = require('./controllers/apiController.js');
+
+// Connect to our database
+mongoose.connect('mongodb://localhost/bigApp');
+
+// Seed the database:
+// 		Since I don't need to save access
+// 		to each seed (as in they just execute),
+// 		then I don't need to store them in
+// 		a variable
+require('./models/seeds/musicSeed.js');
+
+var app = express();
+app.set('view engine', 'jade');
+app.set('views', __dirname + '/views');
+app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.urlencoded({extended: false}));
+
+// Main Views
+app.get('/', indexController.index);
+
+// API Routes
+app.get('/api/getMusic', apiController.getMusic);
+app.post('/api/addMusic', apiController.addMusic);
+
+var server = app.listen(8664, function() {
+	console.log('Express server listening on port ' + server.address().port);
+});

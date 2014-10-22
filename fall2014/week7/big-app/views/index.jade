@@ -1,0 +1,17 @@
+extends layout
+
+block content
+	h1 Big App
+	
+	//- Form for adding a new music item.
+			For now this just takes in the title
+			and artist
+	form#new-music
+		input(type="text", name="title", placeholder="title")
+		input(type="text", name="artist", placeholder="artist")
+		input(type="submit")
+
+	h2 Music List
+
+	//- Placeholder for where track elements go
+	ul#music-list
