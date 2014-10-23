@@ -15,6 +15,13 @@ var apiController = {
 		});
 	},
 
+	getSingle: function(req, res){
+		var id = req.params.id;
+		Music.findOne({_id: id}, function(err, result){
+			res.send(result);
+		});
+	},
+
 	// POST Handler for adding new tracks
 	// to our collection. Assume that the
 	// body of our request has the proper

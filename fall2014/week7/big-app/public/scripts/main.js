@@ -21,7 +21,11 @@ var renderTrack = function(trackData){
 	el.append('<p><em>' + trackData.artist + '</em></p>');
 
 	// Append some action items to this track
-	el.append('<button class="delete">Delete</button>');
+	el.append('<button class="btn btn-danger delete">Delete</button>');
+	// <a href="/view/myidhere">View</a>
+	el.append('<a class="btn btn-info" href="/view/' + trackData._id + '">View</a>');
+	// Add an edit button too
+	el.append('<button class="btn btn-success edit">Edit</button>');
 
 	// Give the new element back to the caller
 	return el;
@@ -102,6 +106,32 @@ $(function(){
 				container.remove();
 			}
 		});
+	});
+
+
+	// Handle the edit button
+	$(document).on('click', '.edit', function(){
+		var container = $(this).closest('li');
+		var modal = $('#edit-modal');
+
+		var musicId = container.attr('data-id');
+
+		var requestUrl = '/api/getSingle/' + musicId;
+
+		$.get(requestUrl, {}, function(responseData){
+			console.log(responseData);
+
+			// Set the values of the inputs in our modal
+			// to be the values of the response data
+			modal.find('[name=title]').val(responseData.title);
+			modal.find('[name=artist]').val(responseData.artist);
+
+			// Finally, after all the data is retrieved and
+			// we've updated the values in the form,
+			// let's show the modal
+			modal.modal('show');
+		});
+
 	});
 
 });
