@@ -10,10 +10,18 @@ var renderTrack = function(trackData){
 	// Generate a new List Item via jQuery
 	var el = $('<li>');
 
+	// Set an attribute on the main containing
+	// li that will let us access the track's
+	// specific database ID
+	el.attr('data-id', trackData._id);
+
 	// Append elements to the LI that will help
 	// display the basics of a track
 	el.append('<h4>' + trackData.title + '</h4>');
 	el.append('<p><em>' + trackData.artist + '</em></p>');
+
+	// Append some action items to this track
+	el.append('<button class="delete">Delete</button>');
 
 	// Give the new element back to the caller
 	return el;
@@ -70,6 +78,30 @@ $(function(){
 			$('#music-list').append(trackEl);
 		});
 
+	});
+
+	// Delegated event for our delete buttons
+	$(document).on('click', '.delete', function(){
+		// Cache this selector so that we can
+		// use it within the scope of our callback
+		// from the post to api/delete
+		var container = $(this).closest('li');
+
+		// Traverse to the parent LI element
+		// and retrieve the data-id attribute value
+		var musicId = container.attr('data-id');
+
+		// Print out the data to console
+		console.log('delete:', musicId);
+
+		$.post('/api/delete', {id: musicId}, function(responseData){
+			console.log('responseData:', responseData);
+			if(responseData.success === true){
+				
+				// successful delete, so remove from DOM
+				container.remove();
+			}
+		});
 	});
 
 });

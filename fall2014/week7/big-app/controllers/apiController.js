@@ -38,6 +38,22 @@ var apiController = {
 			console.log('music saved:', result);
 			res.send(result);
 		});
+	},
+
+	// Allow the user to delete music items
+	// Should send back a success = true
+	// if the delete was successful
+	deleteMusic: function(req, res){
+		var id = req.body.id;
+
+		// Attempt to delete the requested item
+		Music.remove({_id: id}, function(err, result){
+			res.send({
+				err: err,
+				result: result,
+				success: err === null
+			});
+		});
 	}
 };
 
