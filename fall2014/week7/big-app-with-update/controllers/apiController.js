@@ -61,6 +61,18 @@ var apiController = {
 				success: err === null
 			});
 		});
+	},
+
+	updateMusic: function(req, res){
+		var trackData = req.body;
+
+		Music.findById(trackData.id, function(err, result){
+			result.title = trackData.title;
+			result.artist = trackData.artist;
+			result.save(function(err, result){
+				res.send(result);
+			});
+		});
 	}
 };
 

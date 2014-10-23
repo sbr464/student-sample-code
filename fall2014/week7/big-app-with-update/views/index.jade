@@ -26,7 +26,10 @@ block content
 						button.close(data-dismiss="modal") &times;
 						h4.modal-title Edit Item
 					.modal-body
-						
+						//- This hidden field will hold on to
+								the id of whatever item we are editing
+						input(type="hidden", name="id")
+							
 						.form-group
 							input.form-control(type="text", name="title", placeholder="title")
 						.form-group

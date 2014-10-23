@@ -123,6 +123,7 @@ $(function(){
 
 			// Set the values of the inputs in our modal
 			// to be the values of the response data
+			modal.find('[name=id]').val(responseData._id);
 			modal.find('[name=title]').val(responseData.title);
 			modal.find('[name=artist]').val(responseData.artist);
 
@@ -132,6 +133,39 @@ $(function(){
 			modal.modal('show');
 		});
 
+	});
+
+	// Since the edit modal is already created,
+	// we can just listen for submission of the form
+	// without delegating it
+	$('#edit-modal').on('submit', function(e){
+		e.preventDefault();
+
+		var modal = $('#edit-modal');
+
+		// We'll use the data from the edit form
+		// to build a request to the server
+		var musicId = modal.find('[name=id]').val();
+		var musicTitle = modal.find('[name=title]').val();
+		var musicArtist = modal.find('[name=artist]').val();
+		var requestData = {
+			id: musicId,
+			title: musicTitle,
+			artist: musicArtist
+		};
+
+		$.post('/api/update', requestData, function(responseData){
+			// now that the update is complete, let's "refresh" the
+			// existing item in the DOM
+			console.log(responseData);
+
+			// re-render the track and replace it
+			var updatedTrack = renderTrack(responseData);
+			$('[data-id=' + responseData._id + ']').replaceWith(updatedTrack);
+
+			// hide the modal
+			modal.modal('hide');
+		});
 	});
 
 });

@@ -31,6 +31,7 @@ app.get('/api/getMusic', apiController.getMusic);
 app.get('/api/getSingle/:id', apiController.getSingle);
 app.post('/api/addMusic', apiController.addMusic);
 app.post('/api/delete', apiController.deleteMusic);
+app.post('/api/update', apiController.updateMusic);
 
 var server = app.listen(8664, function() {
 	console.log('Express server listening on port ' + server.address().port);
