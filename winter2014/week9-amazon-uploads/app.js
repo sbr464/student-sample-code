@@ -67,7 +67,7 @@ app.get('/', function(req, res) {
   }, function (err, data) {
     res.render('index', {s3: data});
   });
-  
+
 });
 
 /*

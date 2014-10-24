@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "aws-sdk": "^2.0.22",
+    "body-parser": "^1",
+    "express": "^4",
+    "jade": "^1",
+    "multer": "^0.1.6"
+  }
+}
