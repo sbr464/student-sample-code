@@ -1,0 +1,6 @@
+{
+  "name": "async-demos",
+  "dependencies": {
+    "async": "^0.9.0"
+  }
+}
