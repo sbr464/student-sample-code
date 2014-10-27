@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Handlebars</title>
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    
+    <!-- Placeholder for all our template output -->
+    <div class="container">
+      <h1>Party:</h1>
+      <div id="party"></div>
+
+      <h1>People:</h1>
+      <div id="people"></div>
+    </div>
+
+    
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+    <script src="main.js"></script>
+
+    <!-- TEMPLATE -->
+    <script id="demo-template" type="text/x-handlebars-template">
+      <h1>{{name}}</h1>
+      <p>{{jsLibrary}} is my favorite JS library</p>
+      <strong>My favorite game is {{game}}</strong>
+
+      {{!-- Render content if the person is opaque --}}
+      {{#if opacity}}
+        <p>
+          <em>I am opaque</em>
+        </p>
+      {{else}}
+        <p>
+          <em>I am transparent</em>
+        </p>
+      {{/if}}
+
+      {{!-- If I DON'T have a schedule... --}}
+      {{#unless schedule}}
+        <p>I also have no schedule</p>
+      {{else}}
+        {{!-- <p>
+          In the morning i will {{schedule.morning}} and
+          in the evening i will {{schedule.evening}}
+        </p> --}}
+        {{#each schedule}}
+          <p>{{@key}} - {{this}}</p>
+        {{/each}}
+      {{/unless}}
+
+      {{#if snacks}}
+        <ul>
+        {{!--
+          Handlebars sets the context
+          of the loop to the item we passed to "each"
+        --}}
+        {{#each snacks}}
+          {{!-- ../ will go up to the parent context --}}
+          <li>{{../name}} - {{@index}} - {{this}}</li>
+        {{/each}}
+        </ul>
+      {{/if}}
+
+    </script>
+
+
+    <script id="party-person" type="text/x-handlebars-template">
+      <h1>{{name}}</h1>
+      <ul>
+        {{#each supplies}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </script>
+
+  </body>
+</html>
