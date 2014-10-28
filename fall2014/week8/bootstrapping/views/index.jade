@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	h1 Boulder!
+	h2 Better than...
+	ul#cities
+
+	script(src='https://code.jquery.com/jquery-2.1.1.min.js')
+	script(src='scripts/main.js')
+
+	//- bootstrapping
+	script.
+		var data = !{JSON.stringify(otherCities)};
