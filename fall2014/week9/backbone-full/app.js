@@ -33,6 +33,11 @@ app.get('/', indexController.index);
 // we want to insert a new bird
 app.post('/birds', flightController.addBird);
 
+
+// Handle incoming requests to delete a given bird
+// by its id
+app.delete('/birds/:id', flightController.deleteBird);
+
 var server = app.listen(9529, function() {
 	console.log('Express server listening on port ' + server.address().port);
 });

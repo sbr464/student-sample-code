@@ -20,6 +20,18 @@ var flightController = {
 			// backbone can update its local information
 			res.send(bird);
 		});
+	},
+
+	// Handle requests for deleting a bird
+	deleteBird: function(req, res){
+		// Get the bird ID from the url (found in app.js)
+		var birdId = req.params.id;
+
+		// Remove the bird by ID from the DB
+		Bird.remove({_id: birdId}, function(err, results){
+			// Just send back an empty success message
+			res.sendStatus(200);
+		});
 	}
 };
 

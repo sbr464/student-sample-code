@@ -3,6 +3,10 @@ script#bird-tpl(type="text/x-handlebars-template").
 	<li>
 		{{! The name property of our bird}}
 		<h3>{{name}}</h3>
+
+		<p class="actions">
+			<button class="delete">Delete this bird</button>
+		</p>
 		
 		{{! Check if the bird is flightless}}
 		{{#if isFlightless}}

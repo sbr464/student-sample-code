@@ -14,5 +14,17 @@ var BirdView = Backbone.View.extend({
 				this.model.toJSON()
 			)
 		);
+	},
+
+	// Individual bird events
+	events: {
+		'click .delete': 'deleteBird'
+	},
+
+	// Our internal deleteBird method, called from our event map
+	deleteBird: function(){
+		// This will remove the model from the collection
+		// AND make a DELETE request to the server
+		this.model.destroy();
 	}
 });
