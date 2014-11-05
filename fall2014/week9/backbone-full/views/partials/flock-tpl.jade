@@ -1,0 +1,17 @@
+//- Handlebars template for the flock, which
+		will eventually contain an updateable list
+		of individual birds
+script#flock-tpl(type="text/x-handlebars-template").
+	<div class="flock">
+		<h1>{{title}}</h1>
+		
+		{{! Form for adding a new bird}}
+		<form class="new-bird">
+			<input type="text" name="name" placeholder="Name">
+			<input type="text" name="image" placeholder="Image">
+			<input type="submit">
+		</form>
+		
+		{{! Placeholder for eventually rendering each bird}}
+		<ul class="birds"></ul>
+	</div>

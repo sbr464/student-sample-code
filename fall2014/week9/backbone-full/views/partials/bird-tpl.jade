@@ -1,0 +1,21 @@
+//- Handlebars template for individual birds
+script#bird-tpl(type="text/x-handlebars-template").
+	<li>
+		{{! The name property of our bird}}
+		<h3>{{name}}</h3>
+		
+		{{! Check if the bird is flightless}}
+		{{#if isFlightless}}
+			<p>This bird is flightless</p>
+		{{/if}}
+		
+		{{! Check if the bird is edible}}
+		{{#if edible}}
+			<p>This bird is probably delicious</p>
+		{{else}}
+			<p>I wouldn't eat this bird...</p>
+		{{/if}}
+		
+		{{! Print out the image url into an image tag}}
+		<img src="{{image}}" width="100">
+	</li>

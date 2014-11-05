@@ -1,0 +1,32 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset="utf-8")
+		title BirdApp
+
+	body
+		//- Any sub-template content
+		block content
+
+		//- Our Handlebars templates
+		include partials/bird-tpl
+		include partials/flock-tpl
+		
+		//- External Scripts
+		script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js")
+		script(src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js")
+		script(src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js")
+		script(src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js")
+		
+		//- Bootstrapped Data
+		//- 	This came from our call to "render", which
+		//- 	can be found in our indexController
+		script.
+			var bootstrappedBirds = !{JSON.stringify(birds)};
+
+		//- Our application scripts, essentially our whole Backbone app
+		script(src="/scripts/models/bird-model.js")
+		script(src="/scripts/collections/flock-collection.js")
+		script(src="/scripts/views/bird-view.js")
+		script(src="/scripts/views/flock-view.js")
+		script(src="/scripts/main.js")
